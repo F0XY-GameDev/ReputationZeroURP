@@ -1,0 +1,28 @@
+{
+	"Lines":[
+		{
+			"DialogueID":0,
+			"PersonName":"Rupher",
+			"DialogueText":"...*sniffles*...I... I didn't...",
+			"IsTestimony":true,
+			"HasCondition":false,
+			"ConditionID":0
+		},
+		{
+			"DialogueID":1,
+			"PersonName":"Rupher",
+			"DialogueText":"Hello",
+			"IsTestimony":false,
+			"HasCondition":false,
+			"ConditionID":0
+		},
+		{
+			"DialogueID":2,
+			"PersonName":"Rupher",
+			"DialogueText":"Hello",
+			"IsTestimony":false,
+			"HasCondition":false,
+			"ConditionID":0
+		}
+	]
+}
