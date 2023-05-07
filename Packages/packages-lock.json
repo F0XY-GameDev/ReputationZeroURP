@@ -65,9 +65,9 @@
       "url": "https://packages.unity.com"
     },
     "com.unity.nuget.newtonsoft-json": {
-      "version": "file:C:/Users/sirta/Downloads/com.unity.nuget.newtonsoft-json-master/com.unity.nuget.newtonsoft-json-master",
+      "version": "file:com.unity.nuget.newtonsoft-json-master",
       "depth": 0,
-      "source": "local",
+      "source": "embedded",
       "dependencies": {}
     },
     "com.unity.postprocessing": {
