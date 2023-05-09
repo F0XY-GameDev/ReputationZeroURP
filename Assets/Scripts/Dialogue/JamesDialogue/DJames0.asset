@@ -13,13 +13,13 @@ MonoBehaviour:
   m_Name: DJames0
   m_EditorClassIdentifier: 
   DialogueID: 0
-  PersonName: 
-  DialogueText: 
+  PersonName: James
+  DialogueText: Hello, I'm James, the butler here.
   IsTestimony: 0
   HasCondition: 0
-  IsConditionMet: 0
+  IsConditionMet: 1
   ConditionID: 0
-  canHear: 0
+  canHear: 1
   Discovered: 0
   Hidden: 0
   endsDialogue: 0

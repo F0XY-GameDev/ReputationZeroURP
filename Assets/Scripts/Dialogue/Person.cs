@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.InputSystem;
 using System.Linq;
 
 [RequireComponent(typeof(MeshCollider))]
@@ -12,7 +13,11 @@ public class Person : MonoBehaviour, IDiscoverable
     public List<DialogueLine> Lines;
     public List<Question> Responses;
     public DialogueDisplay dialogueDisplay;
+    public Canvas displayCanvas;
     public UnityEvent OnTalk;
+    public InputActionProperty toggleReference;
+
+    bool isColliding = false;
 
     public bool Discovered;
     bool IDiscoverable.Discovered { get => Discovered; set => Discovered = value; }
@@ -21,6 +26,24 @@ public class Person : MonoBehaviour, IDiscoverable
     {
         Lines = new List<DialogueLine>();
         Responses = new List<Question>();
+        toggleReference.action.started += Interact;
+    }
+
+    private void OnDestroy()
+    {
+        toggleReference.action.started -= Interact;
+    }
+
+    private void Interact(InputAction.CallbackContext context)
+    {
+        if (isColliding)
+        {
+            if (displayCanvas.enabled) { return; }
+            Debug.Log("buttonPress");
+            OnTalk.Invoke();
+            FindObjectOfType<Journal>().UpdatePersons();
+            Discovered = true;
+        }
     }
 
     void Start()
@@ -51,7 +74,9 @@ public class Person : MonoBehaviour, IDiscoverable
 
     private void OnTriggerStay(Collider other)
     {        
-        if (dialogueDisplay.isActive) { return; }
+        
+        return;
+        if (dialogueDisplay.enabled) { return; }        
         if (Input.GetButtonDown("XRI_Right_PrimaryButton"))
         {
             Debug.Log("buttonPress");
@@ -59,6 +84,16 @@ public class Person : MonoBehaviour, IDiscoverable
             FindObjectOfType<Journal>().UpdatePersons();
             Discovered = true;            
         }
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        isColliding = true;
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        isColliding = false;
     }
 
 
