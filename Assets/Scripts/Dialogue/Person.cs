@@ -16,6 +16,8 @@ public class Person : MonoBehaviour, IDiscoverable
     public Canvas displayCanvas;
     public UnityEvent OnTalk;
     public InputActionProperty toggleReference;
+    public InputActionReference controls;
+    public InputActionAsset ActionAsset;
 
     bool isColliding = false;
 
@@ -32,6 +34,14 @@ public class Person : MonoBehaviour, IDiscoverable
     private void OnDestroy()
     {
         toggleReference.action.started -= Interact;
+    }
+
+    private void OnEnable()
+    {
+        if (ActionAsset != null)
+        {
+            ActionAsset.Enable();
+        }
     }
 
     private void Interact(InputAction.CallbackContext context)
@@ -73,11 +83,9 @@ public class Person : MonoBehaviour, IDiscoverable
     }
 
     private void OnTriggerStay(Collider other)
-    {        
-        
-        return;
+    {                
         if (dialogueDisplay.enabled) { return; }        
-        if (Input.GetButtonDown("XRI_Right_PrimaryButton"))
+        if (controls.action.ReadValue<float>() >= 0.7f)
         {
             Debug.Log("buttonPress");
             OnTalk.Invoke();
@@ -107,5 +115,12 @@ public class Person : MonoBehaviour, IDiscoverable
     {
         Responses.Add(question);
         Responses = Responses.OrderBy(d => d.ID).ToList();
+    }
+
+    public void EngageDialogue(GameObject player)
+    {
+        OnTalk.Invoke();
+        FindObjectOfType<Journal>().UpdatePersons();
+        Discovered = true;
     }
 }
