@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: abcf79f897f54a74aad8ea80bda15d81, type: 3}
   m_Name: DJames1
   m_EditorClassIdentifier: 
-  DialogueID: 0
+  DialogueID: 4
   PersonName: James
   DialogueText: 'Yes, I was quite fond of the Lady... '
   IsTestimony: 0
@@ -23,4 +23,4 @@ MonoBehaviour:
   Discovered: 0
   Hidden: 0
   endsDialogue: 0
-  responseIDs: 
+  responseIDs: 0400000006000000

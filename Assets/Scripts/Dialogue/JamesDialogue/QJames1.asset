@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 198f9f21b6088104eaf69269a70d8a5e, type: 3}
   m_Name: QJames1
   m_EditorClassIdentifier: 
-  ID: 0
+  ID: 4
   Message: When did you last speak to the victim?
   PersonName: James
   HasCondition: 0
@@ -20,4 +20,4 @@ MonoBehaviour:
   ConditionID: 0
   Hidden: 0
   endsDialogue: 0
-  dialogueIDs: 
+  dialogueIDs: 05000000

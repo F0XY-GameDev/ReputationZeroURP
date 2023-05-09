@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   DialogueID: 0
   PersonName: Rowan
-  DialogueText: Not much, I heard James found her like that this morning...
+  DialogueText: Not much, I heard the maids found her like that this morning...
   IsTestimony: 0
   HasCondition: 0
   IsConditionMet: 1
