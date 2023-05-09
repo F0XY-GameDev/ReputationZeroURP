@@ -28,12 +28,12 @@ public class Person : MonoBehaviour, IDiscoverable
     {
         Lines = new List<DialogueLine>();
         Responses = new List<Question>();
-        toggleReference.action.started += Interact;
+        controls.action.started += Interact;
     }
 
     private void OnDestroy()
     {
-        toggleReference.action.started -= Interact;
+        controls.action.started -= Interact;
     }
 
     private void OnEnable()
@@ -85,18 +85,30 @@ public class Person : MonoBehaviour, IDiscoverable
     private void OnTriggerStay(Collider other)
     {                
         if (dialogueDisplay.enabled) { return; }        
-        if (controls.action.ReadValue<float>() >= 0.7f)
+        if (Input.GetButtonDown("Fire3"))
         {
-            Debug.Log("buttonPress");
+            Debug.Log("button2Press");
             OnTalk.Invoke();
             FindObjectOfType<Journal>().UpdatePersons();
             Discovered = true;            
+        }
+        if (Input.GetButtonDown("Fire1"))
+        {
+            Debug.Log("button0Press");
+            OnTalk.Invoke();
+            FindObjectOfType<Journal>().UpdatePersons();
+            Discovered = true;
         }
     }
 
     private void OnTriggerEnter(Collider other)
     {
         isColliding = true;
+        var player = other.GetComponent<Player>();
+        if (player != null)
+        {
+            player.colliderGameobject = this.gameObject;
+        }
     }
 
     private void OnTriggerExit(Collider other)
@@ -119,6 +131,7 @@ public class Person : MonoBehaviour, IDiscoverable
 
     public void EngageDialogue(GameObject player)
     {
+        Debug.Log("DialogueAccepted");
         OnTalk.Invoke();
         FindObjectOfType<Journal>().UpdatePersons();
         Discovered = true;

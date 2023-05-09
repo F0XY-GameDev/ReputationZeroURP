@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: abcf79f897f54a74aad8ea80bda15d81, type: 3}
   m_Name: DCop2
   m_EditorClassIdentifier: 
-  DialogueID: 1
+  DialogueID: 2
   PersonName: Unnamed Copper
   DialogueText: I haven't really had a look, I'll leave the speculation to the informed.
   IsTestimony: 0

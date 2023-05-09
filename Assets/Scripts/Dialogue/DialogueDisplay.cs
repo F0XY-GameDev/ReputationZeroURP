@@ -31,6 +31,7 @@ public class DialogueDisplay : MonoBehaviour
 
     public void BeginDialogue(Person person) //begin dialogue is called by the person interacted with to it's own attached dialoguedisplay, it then passes the data from the person to it's own display and that of the responsedisplay
     {
+        Debug.Log("DialogueInitiated");
         Show();
         currentSpeaker = person;
         responseDisplay.SetSpeaker(person);
