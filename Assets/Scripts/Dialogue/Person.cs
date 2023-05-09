@@ -114,6 +114,11 @@ public class Person : MonoBehaviour, IDiscoverable
     private void OnTriggerExit(Collider other)
     {
         isColliding = false;
+        var player = other.GetComponent<Player>();
+        if (player != null)
+        {
+            player.colliderGameobject = null;
+        }
     }
 
 
