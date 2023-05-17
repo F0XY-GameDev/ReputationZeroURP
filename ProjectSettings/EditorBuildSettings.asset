@@ -12,8 +12,8 @@ EditorBuildSettings:
     path: Assets/Scenes/MansionRE.unity
     guid: 72a45b79bb0801e428b04a2892c0a902
   - enabled: 1
-    path: Assets/Scenes/MansionRE 1.unity
-    guid: c0389698831f97b458673a452ad90495
+    path: Assets/Scenes/LoadingScreen.unity
+    guid: c140ee38d0a11134c9a65c025a65c8b4
   m_configObjects:
     Unity.XR.Oculus.Settings: {fileID: 11400000, guid: bfa1182bd221b4ca89619141f66f1260,
       type: 2}
