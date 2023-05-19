@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: 6140817949216813349}
   - component: {fileID: 6140817949216813350}
   - component: {fileID: 6140817949216813348}
+  - component: {fileID: 930634309196456067}
   m_Layer: 0
   m_Name: pills (1)
   m_TagString: Untagged
@@ -30,7 +31,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6483486582304173353}
-  m_LocalRotation: {x: -0, y: -0, z: 0.7071071, w: 0.7071065}
+  m_LocalRotation: {x: 0, y: 0, z: 0.7071068, w: 0.7071068}
   m_LocalPosition: {x: 3.349, y: -15.88, z: -49.44}
   m_LocalScale: {x: 2.8, y: 5.4078856, z: 2.8}
   m_ConstrainProportionsScale: 1
@@ -113,7 +114,7 @@ BoxCollider:
   m_GameObject: {fileID: 6483486582304173353}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Size: {x: 0.022537837, y: 0.020756278, z: 0.02253784}
   m_Center: {x: 9.313225e-10, y: 0.00037813652, z: -0.0000000013969838}
@@ -251,7 +252,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 4294967295
   m_InteractionLayers:
-    m_Bits: 1
+    m_Bits: 12
   m_DistanceCalculationMode: 1
   m_SelectMode: 0
   m_CustomReticle: {fileID: 0}
@@ -358,3 +359,17 @@ MonoBehaviour:
   m_StartingSingleGrabTransformers: []
   m_StartingMultipleGrabTransformers: []
   m_AddDefaultGrabTransformers: 1
+--- !u!64 &930634309196456067
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6483486582304173353}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -5076798556035486163, guid: 76c2730e0a6c2ed4bb5a9d021a9ced01, type: 3}
