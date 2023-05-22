@@ -38946,7 +38946,6 @@ GameObject:
   - component: {fileID: 964002721}
   - component: {fileID: 964002720}
   - component: {fileID: 964002719}
-  - component: {fileID: 964002718}
   - component: {fileID: 964002717}
   m_Layer: 8
   m_Name: Cylinder (6)
@@ -38968,22 +38967,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.025794018, y: 0.05908602, z: 0.006177564}
   m_Center: {x: -0.00016849069, y: 0.02961743, z: 0.000000030717732}
---- !u!54 &964002718
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 964002716}
-  serializedVersion: 2
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_UseGravity: 1
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!23 &964002719
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -51990,7 +51973,6 @@ GameObject:
   - component: {fileID: 1254590721}
   - component: {fileID: 1254590720}
   - component: {fileID: 1254590719}
-  - component: {fileID: 1254590718}
   - component: {fileID: 1254590717}
   m_Layer: 8
   m_Name: Cylinder (3)
@@ -52012,22 +51994,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.025794018, y: 0.05908602, z: 0.006177564}
   m_Center: {x: -0.00016849069, y: 0.02961743, z: 0.000000030717732}
---- !u!54 &1254590718
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1254590716}
-  serializedVersion: 2
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_UseGravity: 1
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!23 &1254590719
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -60674,7 +60640,6 @@ GameObject:
   - component: {fileID: 1442151306}
   - component: {fileID: 1442151305}
   - component: {fileID: 1442151304}
-  - component: {fileID: 1442151303}
   - component: {fileID: 1442151302}
   m_Layer: 8
   m_Name: Cylinder (7)
@@ -60696,22 +60661,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.025794018, y: 0.05908602, z: 0.006177564}
   m_Center: {x: -0.00016849069, y: 0.02961743, z: 0.000000030717732}
---- !u!54 &1442151303
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1442151301}
-  serializedVersion: 2
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_UseGravity: 1
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!23 &1442151304
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -73685,7 +73634,6 @@ GameObject:
   - component: {fileID: 1764727625}
   - component: {fileID: 1764727624}
   - component: {fileID: 1764727623}
-  - component: {fileID: 1764727622}
   - component: {fileID: 1764727621}
   m_Layer: 8
   m_Name: Cylinder (1)
@@ -73707,22 +73655,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.025794018, y: 0.05908602, z: 0.006177564}
   m_Center: {x: -0.00016849069, y: 0.02961743, z: 0.000000030717732}
---- !u!54 &1764727622
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1764727620}
-  serializedVersion: 2
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_UseGravity: 1
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!23 &1764727623
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -82122,7 +82054,6 @@ GameObject:
   - component: {fileID: 1939174255}
   - component: {fileID: 1939174254}
   - component: {fileID: 1939174253}
-  - component: {fileID: 1939174252}
   - component: {fileID: 1939174251}
   m_Layer: 8
   m_Name: Cylinder (4)
@@ -82144,22 +82075,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.025794018, y: 0.05908602, z: 0.006177564}
   m_Center: {x: -0.00016849069, y: 0.02961743, z: 0.000000030717732}
---- !u!54 &1939174252
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1939174250}
-  serializedVersion: 2
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_UseGravity: 1
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!23 &1939174253
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -84302,7 +84217,6 @@ GameObject:
   - component: {fileID: 1988352825}
   - component: {fileID: 1988352824}
   - component: {fileID: 1988352823}
-  - component: {fileID: 1988352822}
   - component: {fileID: 1988352821}
   m_Layer: 8
   m_Name: Cylinder (5)
@@ -84324,22 +84238,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.025794018, y: 0.05908602, z: 0.006177564}
   m_Center: {x: -0.00016849069, y: 0.02961743, z: 0.000000030717732}
---- !u!54 &1988352822
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1988352820}
-  serializedVersion: 2
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_UseGravity: 1
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!23 &1988352823
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -89431,7 +89329,6 @@ GameObject:
   - component: {fileID: 2086802777}
   - component: {fileID: 2086802781}
   - component: {fileID: 2086802780}
-  - component: {fileID: 2086802779}
   - component: {fileID: 2086802778}
   m_Layer: 8
   m_Name: Cylinder (9)
@@ -89469,22 +89366,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.025794018, y: 0.05908602, z: 0.006177564}
   m_Center: {x: -0.00016849069, y: 0.02961743, z: 0.000000030717732}
---- !u!54 &2086802779
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2086802776}
-  serializedVersion: 2
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_UseGravity: 1
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!23 &2086802780
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -92575,7 +92456,6 @@ GameObject:
   - component: {fileID: 2138954656}
   - component: {fileID: 2138954655}
   - component: {fileID: 2138954654}
-  - component: {fileID: 2138954653}
   - component: {fileID: 2138954652}
   m_Layer: 8
   m_Name: Cylinder (2)
@@ -92597,22 +92477,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.025794018, y: 0.05908602, z: 0.006177564}
   m_Center: {x: -0.00016849069, y: 0.02961743, z: 0.000000030717732}
---- !u!54 &2138954653
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2138954651}
-  serializedVersion: 2
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_UseGravity: 1
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!23 &2138954654
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -103923,7 +103787,6 @@ GameObject:
   - component: {fileID: 3445065580164684362}
   - component: {fileID: 4147125850578974782}
   - component: {fileID: 1154745409386755748}
-  - component: {fileID: 4705358873113398909}
   - component: {fileID: 4705358873113398908}
   m_Layer: 8
   m_Name: Cylinder
@@ -103945,22 +103808,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.025794018, y: 0.05908602, z: 0.006177564}
   m_Center: {x: -0.00016849069, y: 0.02961743, z: 0.000000030717732}
---- !u!54 &4705358873113398909
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4705358873113398907}
-  serializedVersion: 2
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_UseGravity: 1
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!23 &4710243211736575283
 MeshRenderer:
   m_ObjectHideFlags: 0
