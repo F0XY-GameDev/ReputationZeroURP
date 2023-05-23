@@ -51,8 +51,7 @@ public class Person : MonoBehaviour, IDiscoverable
             if (displayCanvas.enabled) { return; }
             Debug.Log("buttonPress");
             OnTalk.Invoke();
-            FindObjectOfType<Journal>().UpdatePersons();
-            Discovered = true;
+            FindObjectOfType<Journal>().UpdatePersons();            
         }
     }
 
@@ -82,6 +81,11 @@ public class Person : MonoBehaviour, IDiscoverable
         
     }
 
+    public void Discover()
+    {
+        Discovered = true;
+    }
+
     private void OnTriggerStay(Collider other)
     {                
         if (dialogueDisplay.enabled) { return; }        
@@ -90,14 +94,14 @@ public class Person : MonoBehaviour, IDiscoverable
             Debug.Log("button2Press");
             OnTalk.Invoke();
             FindObjectOfType<Journal>().UpdatePersons();
-            Discovered = true;            
+                        
         }
         if (Input.GetButtonDown("Fire1"))
         {
             Debug.Log("button0Press");
             OnTalk.Invoke();
             FindObjectOfType<Journal>().UpdatePersons();
-            Discovered = true;
+            
         }
     }
 
@@ -135,14 +139,9 @@ public class Person : MonoBehaviour, IDiscoverable
     }
 
     public void EngageDialogue(GameObject player)
-    {
-        if (Discovered == false)
-        {
-            Discovered = true;
-        }
+    {        
         Debug.Log("DialogueAccepted");
         OnTalk.Invoke();
-        FindObjectOfType<Journal>().UpdatePersons();
-        Discovered = true;
+        FindObjectOfType<Journal>().UpdatePersons();        
     }
 }

@@ -9,13 +9,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ba6a3a0bcfb93f340ab879063a0759e7, type: 3}
-  m_Name: JamesData
+  m_Script: {fileID: 11500000, guid: 800bc16afb2113642a6cd56cdcb4cfd3, type: 3}
+  m_Name: JamesTestimony1
   m_EditorClassIdentifier: 
-  Mugshot: {fileID: 21300000, guid: 919081e8024dea3439274b7c925397c2, type: 3}
-  Name: James
   PersonID: 1
-  Relation: 
-  Testimonies: []
-  Descriptions: []
-  manager: {fileID: 0}
+  TestimonyID: 1
+  Text: Claims Alexandra told him not to wait up for her.
+  Discovered: 0
+  ConditionID: 0

@@ -25,7 +25,7 @@ public class openBook : MonoBehaviour
         motor.targetVelocity = 200;
         myHinge.motor = motor;
         Debug.Log("motor should be true");
-        StartCoroutine(ActivateJournalAfterSeconds(2));
+        StartCoroutine(ActivateJournalAfterSeconds(0.6f));
     }
     public void CloseBook()
     {
@@ -33,10 +33,10 @@ public class openBook : MonoBehaviour
         motor.targetVelocity = -200;
         myHinge.motor = motor;
         Debug.Log("motor should be false");
-        TitleCanvas.SetActive(false);
+        
     }
 
-    public IEnumerator ActivateJournalAfterSeconds(int time)
+    public IEnumerator ActivateJournalAfterSeconds(float time)
     {
         yield return new WaitForSeconds(time);
         TitleCanvas.SetActive(true);

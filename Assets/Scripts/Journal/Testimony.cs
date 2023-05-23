@@ -2,17 +2,21 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Testimony : MonoBehaviour
+[CreateAssetMenu(menuName = "Testimony")]
+public class Testimony : ScriptableObject, IHiddenDescription
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    public int PersonID;
+    public int TestimonyID;
+    public string Text;
+    public bool Discovered;
+    public int ConditionID;
+    int IHiddenDescription.TargetID { get => PersonID; }
+    string IHiddenDescription.Message { get => Text; }
+    bool IHiddenDescription.Discovered { get => Discovered; set => Discovered = value; }
+    int IHiddenDescription.OwnID { get => TestimonyID; }
 
-    // Update is called once per frame
-    void Update()
+    public void Discover()
     {
-        
+        Discovered = true;
     }
 }

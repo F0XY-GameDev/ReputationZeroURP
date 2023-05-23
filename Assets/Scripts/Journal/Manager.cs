@@ -11,8 +11,8 @@ public interface IDiscoverable
 
 public interface IHiddenDescription
 {
-    public int ID { get; }
-    public int EvidenceID { get; }
+    public int OwnID { get; }
+    public int TargetID { get; }
     public string Message { get; }
     public bool Discovered { get; set; }
 }
@@ -25,7 +25,9 @@ public class Manager : MonoBehaviour
     public List<IDiscoverable> Discoverables;
     public List<IConditional> Conditionals;
     public List<IHiddenDescription> EvidenceDescriptions;
-    public List<EvidenceDescription> EvidenceDescriptionList;
+    public List<EvidenceDescription> EvidenceDescriptionList = new List<EvidenceDescription>();
+    public List<IHiddenDescription> Testimonies = new List<IHiddenDescription>();
+    public List<Testimony> TestimoniesList = new List<Testimony>();
     public PersonData NoPersons;
     public EvidenceData NoEvidence;
 
@@ -42,6 +44,7 @@ public class Manager : MonoBehaviour
         Discoverables.AddRange(FindObjectsOfType<MonoBehaviour>().OfType<IDiscoverable>().ToList());
         Conditionals.AddRange(FindObjectsOfType<MonoBehaviour>().OfType<IConditional>().ToList());
         EvidenceDescriptions.AddRange(EvidenceDescriptionList);
+        Testimonies.AddRange(TestimoniesList);
         Debug.Log($"Discoverables = {Discoverables}, Conditionals = {Conditionals}, EvidenceDescriptions = {EvidenceDescriptions}");
     }
 
@@ -85,7 +88,7 @@ public class Manager : MonoBehaviour
 
     public List<string> GetEvidenceDescriptionsByID(int id)
     {
-        var descriptionsList = EvidenceDescriptions.Where<IHiddenDescription>(x => x.EvidenceID == id).ToList();
+        var descriptionsList = EvidenceDescriptions.Where<IHiddenDescription>(x => x.TargetID == id).ToList();
         if (!descriptionsList.Any())
         {
             return new List<string>();
@@ -125,5 +128,19 @@ public class Manager : MonoBehaviour
         }
     }
 
-
+    public List<string> GetTestimonyTextByID(int id)
+    {
+        var descriptionsList = Testimonies.Where<IHiddenDescription>(x => x.TargetID == id).ToList();
+        if (!descriptionsList.Any())
+        {
+            return new List<string>();
+        }
+        List<string> secondDescriptionsList = new List<string>();
+        var temporaryDescriptionsList = descriptionsList.Where<IHiddenDescription>(x => x.Discovered).ToList();
+        foreach (var description in temporaryDescriptionsList)
+        {
+            secondDescriptionsList.Add(description.Message);
+        }
+        return secondDescriptionsList;
+    }    
 }

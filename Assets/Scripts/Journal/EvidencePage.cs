@@ -60,6 +60,7 @@ public class EvidencePage : MonoBehaviour
         if (CurrentItem == (journal.Evidence.Count - 1))
         {
             nextSection.Invoke();
+            return;
         }
         CurrentItem++;
         if (CurrentItem == (journal.Evidence.Count - 1))

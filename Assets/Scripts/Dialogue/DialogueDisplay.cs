@@ -14,9 +14,11 @@ public class DialogueDisplay : MonoBehaviour
     [SerializeField] ResponseDisplay responseDisplay;
     [SerializeField] GameObject canvas;
     [SerializeField] DialogueManager dialogueManager;
+    [SerializeField] Manager manager;
 
     public void Awake()
-    {        
+    {
+        manager = FindObjectOfType<Manager>();
         responseDisplay = FindObjectOfType<ResponseDisplay>();
         dialogueManager = FindObjectOfType<DialogueManager>();
         canvas.SetActive(false);
@@ -49,7 +51,7 @@ public class DialogueDisplay : MonoBehaviour
             StartCoroutine(EndDialogueAfterSeconds(0.3f));
         }
         var dialogue = dialogueManager.GetLineByID(question.dialogueIDs[question.dialogueIDs.Count - 1]);
-        SetText(dialogue);
+        SetText(dialogue);        
         currentDialogueID = dialogue.DialogueID;
         if (dialogue.endsDialogue)
         {
