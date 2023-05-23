@@ -136,6 +136,10 @@ public class Person : MonoBehaviour, IDiscoverable
 
     public void EngageDialogue(GameObject player)
     {
+        if (Discovered == false)
+        {
+            Discovered = true;
+        }
         Debug.Log("DialogueAccepted");
         OnTalk.Invoke();
         FindObjectOfType<Journal>().UpdatePersons();

@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.InputSystem;
+using UnityEngine.Events;
 
 public class EvidencePage : MonoBehaviour
 {
@@ -13,6 +15,8 @@ public class EvidencePage : MonoBehaviour
     public List<TMPro.TextMeshProUGUI> EvidenceDescriptions;
     public Image ItemImage;
     public Button Next;
+    public InputActionReference pageFlip;
+    public UnityEvent nextSection;
     // Start is called before the first frame update
 
 
@@ -32,23 +36,31 @@ public class EvidencePage : MonoBehaviour
                 break;
             }            
         }
-    }
-
-    public void SetPageItem(EvidenceData data)
-    {
-
-    }
+    }  
 
     private void OnEnable()
     {
+        pageFlip.action.started += NextPage;
         if(CurrentItem < (journal.Evidence.Count - 1))
         {
             Next.interactable = true;
         }
     }
 
+    private void OnDestroy()
+    {
+        pageFlip.action.started -= NextPage;
+    }
+    private void NextPage(InputAction.CallbackContext context)
+    {
+        NextItem();
+    }
     public void NextItem()
     {
+        if (CurrentItem == (journal.Evidence.Count - 1))
+        {
+            nextSection.Invoke();
+        }
         CurrentItem++;
         if (CurrentItem == (journal.Evidence.Count - 1))
         {

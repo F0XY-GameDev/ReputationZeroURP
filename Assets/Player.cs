@@ -2,17 +2,30 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.XR.Interaction.Toolkit;
 
 public class Player : MonoBehaviour
 {
     public SphereCollider handCollider;
     bool isColliding = true;
     public GameObject colliderGameobject;
-    public InputActionReference controls;
+    public InputActionReference talk;
+    public InputActionReference sprint;
+    public float sprintSpeed;
+    public float walkSpeed;
+
+    ActionBasedContinuousMoveProvider moveProvider; //reference to our MoveProvider used for sprint speed
+
+    private void Awake()
+    {
+        moveProvider = this.GetComponent<ActionBasedContinuousMoveProvider>();
+    }
 
     public void OnEnable()
     {
-        controls.action.started += Interact;
+        talk.action.started += Talk;
+        sprint.action.started += Sprint;
+        sprint.action.canceled += Slow;
     }
     public void OnInteract()
     {
@@ -24,9 +37,11 @@ public class Player : MonoBehaviour
 
     public void OnDestroy()
     {
-        controls.action.started -= Interact;
+        talk.action.started -= Talk;
+        sprint.action.started -= Sprint;
+        sprint.action.canceled -= Slow;
     }
-    private void Interact(InputAction.CallbackContext context)
+    private void Talk(InputAction.CallbackContext context)
     {
         Debug.Log("Interacted");
         if (isColliding)
@@ -34,6 +49,18 @@ public class Player : MonoBehaviour
             Debug.Log("IsCollidingAndInteracted");
             if (colliderGameobject != null) { colliderGameobject.GetComponent<Person>().EngageDialogue(this.gameObject); Debug.Log("EngagedDialogue"); }
         }
+    }
+
+    private void Sprint(InputAction.CallbackContext context)
+    {
+        Debug.Log("Sprinting");
+        moveProvider.moveSpeed = sprintSpeed;
+    }
+
+    private void Slow(InputAction.CallbackContext context)
+    {
+        Debug.Log("Slowing Down");
+        moveProvider.moveSpeed = walkSpeed;
     }
 
 
@@ -46,7 +73,15 @@ public class Player : MonoBehaviour
 
     private void OnCollisionExit(Collision collision)
     {
-        
+        isColliding = false;
         colliderGameobject = null;
+    }
+
+    public IEnumerator EndSprint()
+    {
+        var controller = GetComponent<CharacterController>();
+
+        yield return new WaitUntil(() => controller.velocity.magnitude <= 0.2f);
+        moveProvider.moveSpeed = walkSpeed;
     }
 }
