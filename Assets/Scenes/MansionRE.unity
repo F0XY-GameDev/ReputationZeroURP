@@ -116772,13 +116772,26 @@ MonoBehaviour:
   handCollider: {fileID: 318015569}
   colliderGameobject: {fileID: 0}
   talk: {fileID: -1212205762410366741, guid: c348712bda248c246b8c49b3db54643f, type: 3}
-  endDialogue: {fileID: 0}
+  endDialogue: {fileID: -2018547620281694757, guid: c348712bda248c246b8c49b3db54643f,
+    type: 3}
   sprint: {fileID: -7641438197376633888, guid: c348712bda248c246b8c49b3db54643f, type: 3}
   sprintSpeed: 5
   walkSpeed: 3
   closeDialogue:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: 
+        m_MethodName: 
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!4 &7893182494174926139
 Transform:
   m_ObjectHideFlags: 0
