@@ -50,6 +50,7 @@ public class EvidencePage : MonoBehaviour
     private void OnDisable()
     {
         pageFlip.action.started -= NextPage;
+        CurrentItem = 0;
     }
 
     private void OnDestroy()
@@ -74,11 +75,4 @@ public class EvidencePage : MonoBehaviour
         }
 
     }
-
-    private void OnDisable()
-    {
-        CurrentItem = 0;
-    }
-
-
 }

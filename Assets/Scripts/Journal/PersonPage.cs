@@ -49,6 +49,8 @@ public class PersonPage : MonoBehaviour
     private void OnDisable()
     {
         pageFlip.action.started -= NextPage;
+        CurrentPerson = 0;
+
     }
 
     private void OnDestroy()
@@ -73,10 +75,5 @@ public class PersonPage : MonoBehaviour
             Next.interactable = false;
         }
 
-    }
-
-    private void OnDisable()
-    {
-        CurrentPerson = 0;
-    }
+    }    
 }
