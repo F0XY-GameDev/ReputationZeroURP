@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.XR.Interaction.Toolkit;
+using UnityEngine.Events;
 
 public class Player : MonoBehaviour
 {
@@ -10,9 +11,11 @@ public class Player : MonoBehaviour
     bool isColliding = true;
     public GameObject colliderGameobject;
     public InputActionReference talk;
+    public InputActionReference endDialogue;
     public InputActionReference sprint;
     public float sprintSpeed;
     public float walkSpeed;
+    public UnityEvent closeDialogue;
 
     ActionBasedContinuousMoveProvider moveProvider; //reference to our MoveProvider used for sprint speed
 
@@ -24,6 +27,7 @@ public class Player : MonoBehaviour
     public void OnEnable()
     {
         talk.action.started += Talk;
+        endDialogue.action.started += EndTalk;
         sprint.action.started += Sprint;
         sprint.action.canceled += Slow;
     }
@@ -38,6 +42,7 @@ public class Player : MonoBehaviour
     public void OnDestroy()
     {
         talk.action.started -= Talk;
+        endDialogue.action.started -= EndTalk;
         sprint.action.started -= Sprint;
         sprint.action.canceled -= Slow;
     }
@@ -49,6 +54,11 @@ public class Player : MonoBehaviour
             Debug.Log("IsCollidingAndInteracted");
             if (colliderGameobject != null) { colliderGameobject.GetComponent<Person>().EngageDialogue(this.gameObject); Debug.Log("EngagedDialogue"); }
         }
+    }
+
+    private void EndTalk(InputAction.CallbackContext context)
+    {
+        closeDialogue.Invoke();
     }
 
     private void Sprint(InputAction.CallbackContext context)
