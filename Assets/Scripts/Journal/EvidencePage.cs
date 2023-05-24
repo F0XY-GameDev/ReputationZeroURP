@@ -47,6 +47,11 @@ public class EvidencePage : MonoBehaviour
         }
     }
 
+    private void OnDisable()
+    {
+        pageFlip.action.started -= NextPage;
+    }
+
     private void OnDestroy()
     {
         pageFlip.action.started -= NextPage;

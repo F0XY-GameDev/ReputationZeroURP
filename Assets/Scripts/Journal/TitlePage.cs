@@ -20,6 +20,10 @@ public class TitlePage : MonoBehaviour
         pageFlip.action.started += NextSection;
     }
 
+    private void OnDisable()
+    {
+        pageFlip.action.started -= NextSection;
+    }
     void OnDestroy()
     {
         pageFlip.action.started -= NextSection;
