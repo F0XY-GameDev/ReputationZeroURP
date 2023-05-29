@@ -9,6 +9,7 @@ TagManager:
   - LeftPage
   - Whiteboard
   - USB
+  - Button
   layers:
   - Default
   - TransparentFX
