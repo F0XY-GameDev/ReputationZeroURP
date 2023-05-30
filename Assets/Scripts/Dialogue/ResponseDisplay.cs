@@ -22,6 +22,7 @@ public class ResponseDisplay : MonoBehaviour
     [SerializeField] Player player;
     [SerializeField] Transform playerTransform;
     [SerializeField] Vector3 attachOffset;
+    [SerializeField] Vector3 scale;
     
 
 
@@ -60,8 +61,8 @@ public class ResponseDisplay : MonoBehaviour
             if (t.CompareTag("Attach"))
             {
                 this.transform.parent = t;
-                this.transform.localPosition = Vector3.zero;
-                this.transform.localPosition += attachOffset;
+                this.transform.localPosition = Vector3.zero + attachOffset;
+                this.transform.localScale = scale;
                 this.transform.localRotation = Quaternion.identity;
             }
         }

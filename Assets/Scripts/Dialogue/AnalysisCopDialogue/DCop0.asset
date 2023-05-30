@@ -15,8 +15,9 @@ MonoBehaviour:
   DialogueID: 0
   PersonName: Unnamed Copper
   DialogueText: Welcome to the crimescene, Detective, the victim is in the room at
-    the end of the hall here.
+    the end of the hall here. Get ready to investigate!
   IsTestimony: 0
+  TestimonyID: 0
   HasCondition: 0
   IsConditionMet: 1
   ConditionID: 0
@@ -24,4 +25,7 @@ MonoBehaviour:
   Discovered: 0
   Hidden: 0
   endsDialogue: 0
-  responseIDs: 000000000100000002000000
+  OnSay:
+    m_PersistentCalls:
+      m_Calls: []
+  responseIDs: 090000000100000002000000

@@ -15,8 +15,10 @@ MonoBehaviour:
   DialogueID: 1
   PersonName: Unnamed Copper
   DialogueText: Our two main suspects are in the Dining Room, through the doors under
-    the stairs. I've also put your case file on the dining room table.
+    the stairs. I've also put your case file on the dining room table. Make sure
+    to fill it with all the Evidence you think is important.
   IsTestimony: 0
+  TestimonyID: 0
   HasCondition: 0
   IsConditionMet: 1
   ConditionID: 0
@@ -24,4 +26,7 @@ MonoBehaviour:
   Discovered: 0
   Hidden: 0
   endsDialogue: 0
-  responseIDs: 0000000002000000
+  OnSay:
+    m_PersistentCalls:
+      m_Calls: []
+  responseIDs: 000000000200000009000000
