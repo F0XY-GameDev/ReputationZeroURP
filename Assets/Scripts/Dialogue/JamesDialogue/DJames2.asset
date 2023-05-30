@@ -15,7 +15,8 @@ MonoBehaviour:
   DialogueID: 5
   PersonName: James
   DialogueText: Yesterday, just after dinner, she told me I shan't wait up.
-  IsTestimony: 0
+  IsTestimony: 1
+  TestimonyID: 1
   HasCondition: 0
   IsConditionMet: 1
   ConditionID: 0

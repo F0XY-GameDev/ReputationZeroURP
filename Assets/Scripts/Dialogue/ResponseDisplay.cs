@@ -20,6 +20,9 @@ public class ResponseDisplay : MonoBehaviour
 
     [SerializeField] DialogueDisplay dialogueDisplay;
     [SerializeField] Player player;
+    [SerializeField] Transform playerTransform;
+    [SerializeField] Vector3 attachOffset;
+    
 
 
 
@@ -51,6 +54,17 @@ public class ResponseDisplay : MonoBehaviour
     {
         player.isTalking = true;
         dialogueDisplay = _dialogueDisplay;
+        var transform = dialogueDisplay.GetComponentsInChildren<Transform>();
+        foreach (Transform t in transform)
+        {
+            if (t.CompareTag("Attach"))
+            {
+                this.transform.parent = t;
+                this.transform.localPosition = Vector3.zero;
+                this.transform.localPosition += attachOffset;
+                this.transform.localRotation = Quaternion.identity;
+            }
+        }
         Show();
         var tempQuestionList = new List<Question>();
         foreach(int i in dialogue.responseIDs) { tempQuestionList.Add(responseManager.GetQuestionByID(i)); Debug.Log("Added response"); }
@@ -135,6 +149,7 @@ public class ResponseDisplay : MonoBehaviour
     {
         StartCoroutine(dialogueDisplay.EndDialogueAfterSeconds(0.1f));
         StartCoroutine(EndResponseAfterSeconds(0.1f));
+        this.transform.parent = playerTransform;
     }
 
     public IEnumerator EndResponseAfterSeconds(float seconds)

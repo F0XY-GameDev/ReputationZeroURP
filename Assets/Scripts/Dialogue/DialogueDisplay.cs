@@ -76,7 +76,16 @@ public class DialogueDisplay : MonoBehaviour
             EndDialogue();
         }
         var dialogue = dialogueManager.GetLineByID(question.dialogueIDs[question.dialogueIDs.Count - 1]);
-        SetText(dialogue);        
+        SetText(dialogue);
+        dialogue.Say();
+        if (dialogue.IsTestimony)
+        {
+            var personPage = FindObjectOfType<PersonPage>(true);
+            if (personPage != null)
+            {
+                personPage.AddTestimony(manager.GetTestimonyByID(dialogue.TestimonyID));
+            }
+        }
         currentDialogueID = dialogue.DialogueID;
         if (dialogue.endsDialogue)
         {
@@ -88,7 +97,7 @@ public class DialogueDisplay : MonoBehaviour
     public void EndDialogue()
     {
         StartCoroutine(responseDisplay.EndResponseAfterSeconds(0.1f));
-        StartCoroutine(EndDialogueAfterSeconds(0.1f));
+        StartCoroutine(EndDialogueAfterSeconds(3f));
     }
 
     public IEnumerator EndDialogueAfterSeconds(float seconds)

@@ -10,6 +10,7 @@ public class DialogueLine : ScriptableObject, IDiscoverable, IHideable //as an I
     public string PersonName;
     public string DialogueText;
     public bool IsTestimony;
+    public int TestimonyID;
     public bool HasCondition;
     public bool IsConditionMet;
     public int ConditionID;
@@ -23,6 +24,11 @@ public class DialogueLine : ScriptableObject, IDiscoverable, IHideable //as an I
     bool IHideable.Hidden { get => Hidden; set => Hidden = value; }
     public void Say()
     {
+        if (IsTestimony)
+        {
+            var manager = FindObjectOfType<Manager>();            
+            manager.UnlockTestimonyByID(TestimonyID);
+        }
         OnSay.Invoke();
     }
 }

@@ -265,10 +265,16 @@ MonoBehaviour:
   OnTalk:
     m_PersistentCalls:
       m_Calls: []
+  OnPersonEnteredTrigger:
+    m_PersistentCalls:
+      m_Calls: []
+  OnPersonExitedTrigger:
+    m_PersistentCalls:
+      m_Calls: []
   toggleReference:
     m_UseReference: 0
     m_Action:
-      m_Name: 
+      m_Name: Toggle Reference
       m_Type: 0
       m_ExpectedControlType: 
       m_Id: e8aa7874-0882-484c-a644-144def666946

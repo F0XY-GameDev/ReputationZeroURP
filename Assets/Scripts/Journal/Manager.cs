@@ -17,32 +17,32 @@ public interface IHiddenDescription
     public bool Discovered { get; set; }
 }
 
-
-
 public class Manager : MonoBehaviour
 {
-
+    [Header("Lists")]
     public List<IDiscoverable> Discoverables;
     public List<IConditional> Conditionals;
     public List<IHiddenDescription> EvidenceDescriptions;
     public List<EvidenceDescription> EvidenceDescriptionList = new List<EvidenceDescription>();
     public List<IHiddenDescription> Testimonies = new List<IHiddenDescription>();
     public List<Testimony> TestimoniesList = new List<Testimony>();
+    [Header("Null Data")]
     public PersonData NoPersons;
     public EvidenceData NoEvidence;
-
+    public EvidenceDescription NoDescriptions;
+    public Testimony NoTestimonies;
+    [Header("Progress Flags")]
     public bool xTutorialFinished;
     public bool yTutorialFinished;
     public bool isGrabTutorialFinished;
     public bool isRegisterTutorialFinished;
 
-    private void Awake()
+    void Awake()
     {
         Discoverables = new List<IDiscoverable>();
         Conditionals = new List<IConditional>();
         EvidenceDescriptions = new List<IHiddenDescription>();        
     }
-    // Start is called before the first frame update
     void Start()
     {
         Discoverables.AddRange(FindObjectsOfType<MonoBehaviour>().OfType<IDiscoverable>().ToList());
@@ -51,18 +51,17 @@ public class Manager : MonoBehaviour
         Testimonies.AddRange(TestimoniesList);
         Debug.Log($"Discoverables = {Discoverables}, Conditionals = {Conditionals}, EvidenceDescriptions = {EvidenceDescriptions}");
     }
-
-    // Update is called once per frame
-    void Update()
+    public void UpdateAllLists()
     {
-        
+        EvidenceDescriptions.Clear();
+        Testimonies.Clear();
+        EvidenceDescriptions.AddRange(EvidenceDescriptionList);
+        Testimonies.AddRange(TestimoniesList);
     }
-
     public List<IDiscoverable> Discovered()
     {
         return Discoverables.Where<IDiscoverable>(x => x.Discovered).ToList();
     }
-
     public IConditional GetConditionalMetByID(int id)
     {
         var conditionalList = Conditionals.Where<IConditional>(x => x.isComplete).ToList();
@@ -76,7 +75,6 @@ public class Manager : MonoBehaviour
         }
         return null;
     }
-
     public List<EvidenceData> GetEvidence()
     {
         var evidence = Discoverables.Where(x => x.Discovered).OfType<Evidence>().Select(x => x.EvidenceData);
@@ -89,7 +87,67 @@ public class Manager : MonoBehaviour
             return evidence.ToList();
         }
     }
-
+    public List<EvidenceDescription> GetDescriptions()
+    {
+        var descriptions = EvidenceDescriptions.Where(x => x.Discovered).OfType<EvidenceDescription>();
+        if (!descriptions.Any())
+        {
+            return new List<EvidenceDescription>() { NoDescriptions };
+        }
+        else
+        {
+            return descriptions.ToList();
+        }
+    }
+    public List<EvidenceDescription> GetEvidenceDescriptionListByID(int id)
+    {
+        var temporaryEvidenceDescriptions = new List<EvidenceDescription>();
+        foreach (EvidenceDescription description in EvidenceDescriptionList)
+        {
+            if (id == description.EvidenceID)
+            {
+                temporaryEvidenceDescriptions.Add(description);
+            }
+        }
+        return temporaryEvidenceDescriptions;
+    }
+    public List<Testimony> GetTestimonyByID(int id)
+    {
+        foreach (Testimony testimony in TestimoniesList)
+        {
+            List<Testimony> testimonyList = new List<Testimony>();
+            if (testimony.TestimonyID == id)
+            {
+                testimonyList.Add(testimony);                
+            }
+            return testimonyList;
+        }
+        return new List<Testimony>();
+    }
+    public List<Testimony> GetTestimonies()
+    {
+        var testimonies = Testimonies.Where(x => x.Discovered).OfType<Testimony>();
+        if (!testimonies.Any())
+        {
+            return new List<Testimony>() { NoTestimonies };
+        }
+        else
+        {
+            return testimonies.ToList();
+        }
+    }
+    public List<PersonData> GetPersons()
+    {
+        var persons =  Discoverables.Where(x => x.Discovered).OfType<Person>().Select(x => x.PersonData);
+        if(!persons.Any())
+        {
+            return new List<PersonData>() { NoPersons };
+        }
+        else
+        {
+            return persons.ToList();
+        }
+    }
     public List<string> GetEvidenceDescriptionsByID(int id)
     {
         var descriptionsList = EvidenceDescriptions.Where<IHiddenDescription>(x => x.TargetID == id).ToList();
@@ -105,33 +163,6 @@ public class Manager : MonoBehaviour
         }
         return secondDescriptionsList;
     }
-
-    public List<EvidenceDescription> GetEvidenceDescriptionListByID(int id)
-    {
-        var temporaryEvidenceDescriptions = new List<EvidenceDescription>();
-        foreach (EvidenceDescription description in EvidenceDescriptionList)
-        {
-            if (id == description.EvidenceID)
-            {
-                temporaryEvidenceDescriptions.Add(description);
-            }
-        }
-        return temporaryEvidenceDescriptions;
-    }
-
-    public List<PersonData> GetPersons()
-    {
-        var persons =  Discoverables.Where(x => x.Discovered).OfType<Person>().Select(x => x.PersonData);
-        if(!persons.Any())
-        {
-            return new List<PersonData>() { NoPersons };
-        }
-        else
-        {
-            return persons.ToList();
-        }
-    }
-
     public List<string> GetTestimonyTextByID(int id)
     {
         var descriptionsList = Testimonies.Where<IHiddenDescription>(x => x.TargetID == id).ToList();
@@ -147,4 +178,24 @@ public class Manager : MonoBehaviour
         }
         return secondDescriptionsList;
     }    
+    public void UnlockTestimonyByID(int id)
+    {
+        foreach (Testimony testimony in TestimoniesList)
+        {
+            if (testimony.TestimonyID == id)
+            {
+                testimony.Discover();
+            }
+        }
+    }
+    public void UnlockEvidenceDescriptionByID(int id)
+    {
+        foreach (EvidenceDescription description in EvidenceDescriptionList)
+        {            
+            if (description.DescriptionID == id)
+            {
+                description.Discover();
+            }
+        }
+    }
 }

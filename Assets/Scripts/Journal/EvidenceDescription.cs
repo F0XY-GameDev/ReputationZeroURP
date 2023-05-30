@@ -14,4 +14,8 @@ public class EvidenceDescription : ScriptableObject, IHiddenDescription
     string IHiddenDescription.Message { get => Text; }
     bool IHiddenDescription.Discovered { get => Discovered; set => Discovered = value; }
     int IHiddenDescription.OwnID { get => DescriptionID; }
+    public void Discover()
+    {
+        Discovered = true;
+    }
 }
