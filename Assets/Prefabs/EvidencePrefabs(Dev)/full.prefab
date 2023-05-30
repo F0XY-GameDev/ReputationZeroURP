@@ -14,6 +14,8 @@ GameObject:
   - component: {fileID: 340312580469602594}
   - component: {fileID: 340312580469602593}
   - component: {fileID: 340312580469602595}
+  - component: {fileID: 8193970191500421468}
+  - component: {fileID: 1220578607801927661}
   m_Layer: 0
   m_Name: full
   m_TagString: Untagged
@@ -180,6 +182,12 @@ MonoBehaviour:
   OnBagEvidence:
     m_PersistentCalls:
       m_Calls: []
+  OnPlayerEnteredTrigger:
+    m_PersistentCalls:
+      m_Calls: []
+  OnPlayerExitedTrigger:
+    m_PersistentCalls:
+      m_Calls: []
   audioClip: {fileID: 0}
   Discovered: 0
 --- !u!114 &340312580469602595
@@ -307,6 +315,32 @@ MonoBehaviour:
   m_StartingSingleGrabTransformers: []
   m_StartingMultipleGrabTransformers: []
   m_AddDefaultGrabTransformers: 1
+--- !u!135 &8193970191500421468
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 610345144149967991}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.5
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!135 &1220578607801927661
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 610345144149967991}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.5
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &8499887117450804398
 GameObject:
   m_ObjectHideFlags: 0

@@ -16,6 +16,7 @@ public class Player : MonoBehaviour
     public float sprintSpeed;
     public float walkSpeed;
     public UnityEvent closeDialogue;
+    public bool isTalking;
 
     ActionBasedContinuousMoveProvider moveProvider; //reference to our MoveProvider used for sprint speed
 
@@ -48,6 +49,10 @@ public class Player : MonoBehaviour
     }
     private void Talk(InputAction.CallbackContext context)
     {
+        if (isTalking)
+        {
+            return;
+        }
         Debug.Log("Interacted");
         if (isColliding)
         {
@@ -58,7 +63,8 @@ public class Player : MonoBehaviour
 
     private void EndTalk(InputAction.CallbackContext context)
     {
-        closeDialogue.Invoke();
+        Debug.Log("Dialogue Ended");
+        closeDialogue.Invoke();        
     }
 
     private void Sprint(InputAction.CallbackContext context)

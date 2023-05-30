@@ -6,7 +6,6 @@ using UnityEngine.Events;
 
 [RequireComponent(typeof(XRGrabInteractable))]
 [RequireComponent(typeof(AudioSource))]
-
 public class Evidence : MonoBehaviour, IDiscoverable
 {
     // Start is called before the first frame update
@@ -14,8 +13,11 @@ public class Evidence : MonoBehaviour, IDiscoverable
     public bool isCondition;
     public int conditionID;
     public UnityEvent OnBagEvidence;
+    public UnityEvent OnPlayerEnteredTrigger;
+    public UnityEvent OnPlayerExitedTrigger;
     AudioSource audioSource;
     public AudioClip audioClip;
+
 
     public bool Discovered;
     bool IDiscoverable.Discovered { get => Discovered; set => Discovered = value; }
@@ -28,11 +30,24 @@ public class Evidence : MonoBehaviour, IDiscoverable
         EvidenceData.EvidenceDescriptions = FindObjectOfType<Manager>().GetEvidenceDescriptionListByID(EvidenceData.EvidenceID);
     }
 
-    // Update is called once per frame
-    void Update()
+    /*
+    public void OnTriggerEnter(Collider other)
     {
-        
+        var player = other.GetComponent<Player>();
+        if (player != null)
+        {
+            OnPlayerEnteredTrigger.Invoke();
+        }
     }
+
+    public void OnTriggerExit(Collider other)
+    {
+        var player = other.GetComponent<Player>();
+        if (player != null)
+        {
+            OnPlayerExitedTrigger.Invoke();
+        }
+    }*/
 
     public void BagEvidence(ActivateEventArgs args)
     {

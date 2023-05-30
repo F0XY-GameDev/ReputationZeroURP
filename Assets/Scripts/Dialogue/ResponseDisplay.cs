@@ -19,8 +19,9 @@ public class ResponseDisplay : MonoBehaviour
     [SerializeField] DialogueManager dialogueManager;
 
     [SerializeField] DialogueDisplay dialogueDisplay;
+    [SerializeField] Player player;
 
-    
+
 
     public void Awake()
     {
@@ -48,6 +49,7 @@ public class ResponseDisplay : MonoBehaviour
 
     public void BeginResponse(DialogueLine dialogue, DialogueDisplay _dialogueDisplay) //to begin responses, the responsedisplay gets the possible responses for the current dialogue and displays them
     {
+        player.isTalking = true;
         dialogueDisplay = _dialogueDisplay;
         Show();
         var tempQuestionList = new List<Question>();
@@ -129,6 +131,12 @@ public class ResponseDisplay : MonoBehaviour
         }
     }    
 
+    public void EndDialogue()
+    {
+        StartCoroutine(dialogueDisplay.EndDialogueAfterSeconds(0.1f));
+        StartCoroutine(EndResponseAfterSeconds(0.1f));
+    }
+
     public IEnumerator EndResponseAfterSeconds(float seconds)
     {
         yield return new WaitForSeconds(seconds);
@@ -137,6 +145,7 @@ public class ResponseDisplay : MonoBehaviour
         currentQuestionID = 0;
         currentAvailableQuestions.Clear();
         allPossibleQuestions.Clear();
+        player.isTalking = false;
         Hide();
     }
 }

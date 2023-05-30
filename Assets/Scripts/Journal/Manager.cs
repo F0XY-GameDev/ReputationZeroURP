@@ -31,6 +31,8 @@ public class Manager : MonoBehaviour
     public PersonData NoPersons;
     public EvidenceData NoEvidence;
 
+    public bool xTutorialFinished;
+    public bool yTutorialFinished;
 
     private void Awake()
     {
