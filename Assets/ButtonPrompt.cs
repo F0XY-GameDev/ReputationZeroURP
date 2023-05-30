@@ -8,6 +8,7 @@ public class ButtonPrompt : MonoBehaviour
     public Canvas canvas;
     public Vector3 sizeSmall;
     public Vector3 sizeLarge;
+    public Manager manager;
     public void Show(string text = "Press all the buttons to interact (methodically please)")
     {
         canvas.transform.localScale = sizeSmall;
@@ -25,7 +26,7 @@ public class ButtonPrompt : MonoBehaviour
         tmpugui.text = text;
         canvas.transform.localScale = sizeLarge;
         canvas.enabled = true;
-        StartCoroutine(FadeAfterTime(2f));
+        StartCoroutine(FadeAfterTime(5f));
     }
 
     IEnumerator FadeAfterTime(float seconds)

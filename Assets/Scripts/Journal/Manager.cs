@@ -33,6 +33,8 @@ public class Manager : MonoBehaviour
 
     public bool xTutorialFinished;
     public bool yTutorialFinished;
+    public bool isGrabTutorialFinished;
+    public bool isRegisterTutorialFinished;
 
     private void Awake()
     {
