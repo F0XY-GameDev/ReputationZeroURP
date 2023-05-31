@@ -15,6 +15,8 @@ public class Person : MonoBehaviour, IDiscoverable
     public DialogueDisplay dialogueDisplay;
     public Canvas displayCanvas;
     public UnityEvent OnTalk;
+    public UnityEvent OnPersonEnteredTrigger;
+    public UnityEvent OnPersonExitedTrigger;
     public InputActionProperty toggleReference;
     public InputActionReference controls;
     public InputActionAsset ActionAsset;
@@ -111,6 +113,7 @@ public class Person : MonoBehaviour, IDiscoverable
         var player = other.GetComponent<Player>();
         if (player != null)
         {
+            OnPersonEnteredTrigger.Invoke();
             player.colliderGameobject = this.gameObject;
         }
     }
@@ -121,6 +124,7 @@ public class Person : MonoBehaviour, IDiscoverable
         var player = other.GetComponent<Player>();
         if (player != null)
         {
+            OnPersonExitedTrigger.Invoke();
             player.colliderGameobject = null;
         }
     }

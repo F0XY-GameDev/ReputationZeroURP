@@ -2,7 +2,6 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
-
 public class DialogueDisplay : MonoBehaviour
 {
     // Never forget: Start is called before the first frame update and Update is called once per frame
@@ -13,8 +12,13 @@ public class DialogueDisplay : MonoBehaviour
     public bool isActive;
     [SerializeField] ResponseDisplay responseDisplay;
     [SerializeField] GameObject canvas;
+    [SerializeField] GameObject xCanvas;
+    [SerializeField] GameObject yCanvas;
     [SerializeField] DialogueManager dialogueManager;
     [SerializeField] Manager manager;
+    
+    
+    
 
     public void Awake()
     {
@@ -22,6 +26,14 @@ public class DialogueDisplay : MonoBehaviour
         responseDisplay = FindObjectOfType<ResponseDisplay>();
         dialogueManager = FindObjectOfType<DialogueManager>();
         canvas.SetActive(false);
+        if (xCanvas != null)
+        {
+            xCanvas.SetActive(true);
+        }
+        if (yCanvas != null)
+        {
+            yCanvas.SetActive(false);
+        }
     }    
 
     public void ClearText()
@@ -33,6 +45,14 @@ public class DialogueDisplay : MonoBehaviour
 
     public void BeginDialogue(Person person) //begin dialogue is called by the person interacted with to it's own attached dialoguedisplay, it then passes the data from the person to it's own display and that of the responsedisplay
     {
+        if (manager.xTutorialFinished)
+        {
+            xCanvas.SetActive(false);
+        }
+        if (manager.yTutorialFinished)
+        {
+            yCanvas.SetActive(false);
+        }
         Debug.Log("DialogueInitiated");
         Show();
         currentSpeaker = person;
@@ -45,28 +65,48 @@ public class DialogueDisplay : MonoBehaviour
     
     public void AdvanceDialogueByResponse(Question question) //When the player sets a response, that question is passed to the dialogue and handled based off the IDs in each question and dialogueline
     {
+        if (!manager.xTutorialFinished)
+        {
+            manager.xTutorialFinished = true;
+            xCanvas.SetActive(false);
+            yCanvas.SetActive(true);
+        }
         if (question.endsDialogue)
         {
-            StartCoroutine(responseDisplay.EndResponseAfterSeconds(0.3f));
-            StartCoroutine(EndDialogueAfterSeconds(0.3f));
+            EndDialogue();
         }
         var dialogue = dialogueManager.GetLineByID(question.dialogueIDs[question.dialogueIDs.Count - 1]);
-        SetText(dialogue);        
+        SetText(dialogue);
+        dialogue.Say();
+        if (dialogue.IsTestimony)
+        {
+            var personPage = FindObjectOfType<PersonPage>(true);
+            if (personPage != null)
+            {
+                personPage.AddTestimony(manager.GetTestimonyByID(dialogue.TestimonyID));
+            }
+        }
         currentDialogueID = dialogue.DialogueID;
         if (dialogue.endsDialogue)
         {
-            StartCoroutine(responseDisplay.EndResponseAfterSeconds(0.3f));
-            StartCoroutine(EndDialogueAfterSeconds(0.3f));
+            EndDialogue();
         }
         responseDisplay.SetText(dialogue);
     }
 
+    public void EndDialogue()
+    {
+        StartCoroutine(responseDisplay.EndResponseAfterSeconds(0.1f));
+        StartCoroutine(EndDialogueAfterSeconds(3f));
+    }
+
     public IEnumerator EndDialogueAfterSeconds(float seconds)
     {
+        manager.yTutorialFinished = true;
         yield return new WaitForSeconds(seconds);
         ClearText();
         currentSpeaker = null;
-        Hide();
+        Hide();        
     }
 
     public void SetText(DialogueLine dialogue)

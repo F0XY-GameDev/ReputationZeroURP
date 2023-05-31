@@ -15,7 +15,8 @@ MonoBehaviour:
   DialogueID: 4
   PersonName: James
   DialogueText: 'Yes, I was quite fond of the Lady... '
-  IsTestimony: 0
+  IsTestimony: 1
+  TestimonyID: 0
   HasCondition: 0
   IsConditionMet: 1
   ConditionID: 0

@@ -19,8 +19,13 @@ public class ResponseDisplay : MonoBehaviour
     [SerializeField] DialogueManager dialogueManager;
 
     [SerializeField] DialogueDisplay dialogueDisplay;
-
+    [SerializeField] Player player;
+    [SerializeField] Transform playerTransform;
+    [SerializeField] Vector3 attachOffset;
+    [SerializeField] Vector3 scale;
     
+
+
 
     public void Awake()
     {
@@ -48,7 +53,19 @@ public class ResponseDisplay : MonoBehaviour
 
     public void BeginResponse(DialogueLine dialogue, DialogueDisplay _dialogueDisplay) //to begin responses, the responsedisplay gets the possible responses for the current dialogue and displays them
     {
+        player.isTalking = true;
         dialogueDisplay = _dialogueDisplay;
+        var transform = dialogueDisplay.GetComponentsInChildren<Transform>();
+        foreach (Transform t in transform)
+        {
+            if (t.CompareTag("Attach"))
+            {
+                this.transform.parent = t;
+                this.transform.localPosition = Vector3.zero + attachOffset;
+                this.transform.localScale = scale;
+                this.transform.localRotation = Quaternion.identity;
+            }
+        }
         Show();
         var tempQuestionList = new List<Question>();
         foreach(int i in dialogue.responseIDs) { tempQuestionList.Add(responseManager.GetQuestionByID(i)); Debug.Log("Added response"); }
@@ -129,6 +146,13 @@ public class ResponseDisplay : MonoBehaviour
         }
     }    
 
+    public void EndDialogue()
+    {
+        StartCoroutine(dialogueDisplay.EndDialogueAfterSeconds(0.1f));
+        StartCoroutine(EndResponseAfterSeconds(0.1f));
+        this.transform.parent = playerTransform;
+    }
+
     public IEnumerator EndResponseAfterSeconds(float seconds)
     {
         yield return new WaitForSeconds(seconds);
@@ -137,6 +161,7 @@ public class ResponseDisplay : MonoBehaviour
         currentQuestionID = 0;
         currentAvailableQuestions.Clear();
         allPossibleQuestions.Clear();
+        player.isTalking = false;
         Hide();
     }
 }

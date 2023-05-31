@@ -9,7 +9,9 @@ public class EvidencePage : MonoBehaviour
 {
 
     public int CurrentItem = 0;
+    public int CurrentItemID;
     public Journal journal;    
+    public Manager manager;
     public TMPro.TextMeshProUGUI EvidenceFoundLocation;
     public TMPro.TextMeshProUGUI ItemName;
     public List<TMPro.TextMeshProUGUI> EvidenceDescriptions;
@@ -17,29 +19,30 @@ public class EvidencePage : MonoBehaviour
     public Button Next;
     public InputActionReference pageFlip;
     public UnityEvent nextSection;
-    // Start is called before the first frame update
-
-
+    public List<string> linkedDescriptions = new List<string>();
+    EvidenceData evidenceData;
+    
     // Update is called once per frame
     void Update()
     {        
         ItemName.text = journal.Evidence[CurrentItem].ItemName;
         ItemImage.sprite = journal.Evidence[CurrentItem].ItemPicture;
         EvidenceFoundLocation.text = journal.Evidence[CurrentItem].FoundLocation;
+        evidenceData = journal.Evidence[CurrentItem];
+        linkedDescriptions = manager.GetEvidenceDescriptionsByID(evidenceData.EvidenceID);
         for (int i = 0; i < EvidenceDescriptions.Count; i++) 
-        {
-            if (journal.Evidence[i] != null)
-            {
-                EvidenceDescriptions[i].text = journal.Evidence[CurrentItem].Descriptions[i];
-            } else
+        {            
+            EvidenceDescriptions[i].text = linkedDescriptions[i];
+            if (i >= linkedDescriptions.Count - 1)
             {
                 break;
-            }            
+            }
+            //EvidenceDescriptions[i].text = journal.Evidence[CurrentItem].Descriptions[i];                     
         }
     }  
 
     private void OnEnable()
-    {
+    {        
         pageFlip.action.started += NextPage;
         if(CurrentItem < (journal.Evidence.Count - 1))
         {

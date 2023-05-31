@@ -8,6 +8,7 @@ public class Journal : MonoBehaviour
     public Manager Manager;
     public List<EvidenceData> Evidence;
     public List<PersonData> Persons;
+    public List<List<Testimony>> TestimonyPerPerson;
     public Canvas CurrentPage;
     public Canvas CoverPage;
     public Canvas PeoplePage;

@@ -14,7 +14,6 @@ public class Testimony : ScriptableObject, IHiddenDescription
     string IHiddenDescription.Message { get => Text; }
     bool IHiddenDescription.Discovered { get => Discovered; set => Discovered = value; }
     int IHiddenDescription.OwnID { get => TestimonyID; }
-
     public void Discover()
     {
         Discovered = true;
