@@ -14,6 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   DialogueID: 5
   PersonName: James
+  PersonID: 1
   DialogueText: Yesterday, just after dinner, she told me I shan't wait up.
   IsTestimony: 1
   TestimonyID: 1
@@ -39,4 +40,4 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  responseIDs: 040000000500000006000000
+  responseIDs: 050000000400000006000000

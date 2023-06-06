@@ -4,11 +4,13 @@ using UnityEngine;
 using Newtonsoft.Json;
 using System.IO;
 using UnityEngine.SceneManagement;
+using System.Linq;
 
 
 public interface IHideable
 {
     public bool Hidden { get; set; }
+    public int ID { get; }
 }
 
 public interface IConditional
@@ -32,10 +34,12 @@ public class DialogueManager : MonoBehaviour //dialoguemanager holds the dialogu
     // Never forget: Start is called before the first frame update and Update is called once per frame
     [SerializeField] string filename;
     public DialogueConfig LoadedDialogueConfig;
-    [SerializeField] List<DialogueLine> AllDialogue = new List<DialogueLine>();
-
+    [SerializeField] ResponseManager responseManager;
+    [SerializeField] List<DialogueLine> allDialogue = new List<DialogueLine>();
+    [SerializeField] List<IHideable> discoverableDialogue = new List<IHideable>();
     public void Awake()
     {
+        allDialogue = allDialogue.OrderBy(x => x.DialogueID).ToList();
         int sceneIndex = SceneManager.GetActiveScene().buildIndex;
         switch (sceneIndex)
         {
@@ -66,7 +70,7 @@ public class DialogueManager : MonoBehaviour //dialoguemanager holds the dialogu
         else
         {
             var defConfig = new DialogueConfig();
-            defConfig.Lines.AddRange(AllDialogue);
+            defConfig.Lines.AddRange(allDialogue);
             //defConfig.Lines.AddRange();
             using (var outStream = new FileStream(fullPath, FileMode.Create))
             {
@@ -77,13 +81,47 @@ public class DialogueManager : MonoBehaviour //dialoguemanager holds the dialogu
                 }
             }
             LoadedDialogueConfig = defConfig;
-
         }
     }
-
     public DialogueLine GetLineByID(int id)
     {
         return LoadedDialogueConfig.Lines[id];
+    }
+    public void UnlockDialogueByID(int id)
+    {
+        for (int i = 0; i < LoadedDialogueConfig.Lines.Count - 1; i++)
+        {
+            if (LoadedDialogueConfig.Lines[i].DialogueID == id)
+            {
+                return;
+            }
+        }
+        var dialogue = GetLineByID(id);
+        var person = FindPersonByID(dialogue.PersonID);
+        person.UnlockDialogue(dialogue);
+    }
+    private Person FindPersonByID(int id)
+    {
+        var allPersons = FindObjectsOfType<Person>();
+        foreach (Person person in allPersons)
+        {
+            if (person.PersonData.PersonID == id)
+            {
+                return person;
+            }
+        }
+        return null;
+    }
+    public void UpdateDialogue()
+    {
+        var tempList = new List<DialogueLine>();
+        foreach (IHideable hideable in discoverableDialogue)
+        {
+            tempList.Add((DialogueLine)hideable);
+        }
+        allDialogue = tempList;
+        allDialogue = allDialogue.OrderBy(x => x.DialogueID).ToList();
+        LoadedDialogueConfig.Lines = allDialogue;
     }
 }
 

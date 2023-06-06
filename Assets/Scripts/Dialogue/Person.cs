@@ -25,6 +25,7 @@ public class Person : MonoBehaviour, IDiscoverable
 
     public bool Discovered;
     bool IDiscoverable.Discovered { get => Discovered; set => Discovered = value; }
+    int IDiscoverable.ID { get => PersonData.PersonID; }
 
     void Awake()
     {

@@ -21,6 +21,7 @@ public class Evidence : MonoBehaviour, IDiscoverable
 
     public bool Discovered;
     bool IDiscoverable.Discovered { get => Discovered; set => Discovered = value; }
+    int IDiscoverable.ID { get => EvidenceData.EvidenceID; }
     void Start()
     {
         audioSource = GetComponent<AudioSource>();

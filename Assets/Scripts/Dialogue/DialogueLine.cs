@@ -8,6 +8,7 @@ public class DialogueLine : ScriptableObject, IDiscoverable, IHideable //as an I
 {
     public int DialogueID;
     public string PersonName;
+    public int PersonID;
     public string DialogueText;
     public bool IsTestimony;
     public int TestimonyID;
@@ -21,7 +22,9 @@ public class DialogueLine : ScriptableObject, IDiscoverable, IHideable //as an I
     public UnityEvent OnSay;
     public List<int> responseIDs = new List<int>();
     bool IDiscoverable.Discovered { get => Discovered; set => Discovered = value; }
+    int IDiscoverable.ID { get => DialogueID; }
     bool IHideable.Hidden { get => Hidden; set => Hidden = value; }
+    int IHideable.ID { get => DialogueID; }
     public void Say()
     {
         if (IsTestimony)

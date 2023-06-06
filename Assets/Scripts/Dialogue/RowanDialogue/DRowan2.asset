@@ -14,9 +14,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   DialogueID: 9
   PersonName: Rowan
+  PersonID: 2
   DialogueText: Yea, you're always getting into other's private business, now give
     me some space to grieve for god's sake!
   IsTestimony: 0
+  TestimonyID: 0
   HasCondition: 0
   IsConditionMet: 1
   ConditionID: 0
@@ -24,4 +26,7 @@ MonoBehaviour:
   Discovered: 0
   Hidden: 0
   endsDialogue: 1
+  OnSay:
+    m_PersistentCalls:
+      m_Calls: []
   responseIDs: 

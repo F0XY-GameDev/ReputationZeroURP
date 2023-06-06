@@ -14,8 +14,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   DialogueID: 6
   PersonName: James
+  PersonID: 1
   DialogueText: I haven't a clue to be honest, but it really is a shame.
   IsTestimony: 0
+  TestimonyID: 0
   HasCondition: 0
   IsConditionMet: 1
   ConditionID: 0
@@ -23,4 +25,7 @@ MonoBehaviour:
   Discovered: 0
   Hidden: 0
   endsDialogue: 0
+  OnSay:
+    m_PersistentCalls:
+      m_Calls: []
   responseIDs: 030000000400000006000000

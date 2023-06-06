@@ -15,6 +15,7 @@ MonoBehaviour:
   ID: 7
   Message: What do you know about the murder?
   PersonName: Rowan
+  PersonID: 2
   HasCondition: 0
   isConditionMet: 1
   ConditionID: 0

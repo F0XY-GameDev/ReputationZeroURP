@@ -6,7 +6,7 @@ using System.Linq;
 public interface IDiscoverable
 {
     public bool Discovered { get; set; }
-
+    public int ID { get; }
 }
 
 public interface IHiddenDescription
@@ -39,6 +39,8 @@ public class Manager : MonoBehaviour
 
     void Awake()
     {
+        EvidenceDescriptionList = EvidenceDescriptionList.OrderBy(x => x.DescriptionID).ToList();
+        TestimoniesList = TestimoniesList.OrderBy(x => x.TestimonyID).ToList();
         Discoverables = new List<IDiscoverable>();
         Conditionals = new List<IConditional>();
         EvidenceDescriptions = new List<IHiddenDescription>();        
@@ -53,6 +55,8 @@ public class Manager : MonoBehaviour
     }
     public void UpdateAllLists()
     {
+        EvidenceDescriptionList = EvidenceDescriptionList.OrderBy(x => x.DescriptionID).ToList();
+        TestimoniesList = TestimoniesList.OrderBy(x => x.TestimonyID).ToList();
         EvidenceDescriptions.Clear();
         Testimonies.Clear();
         EvidenceDescriptions.AddRange(EvidenceDescriptionList);
@@ -187,6 +191,7 @@ public class Manager : MonoBehaviour
                 testimony.Discover();
             }
         }
+        UpdateAllLists();
     }
     public void UnlockEvidenceDescriptionByID(int id)
     {
@@ -197,5 +202,6 @@ public class Manager : MonoBehaviour
                 description.Discover();
             }
         }
+        UpdateAllLists();
     }
 }

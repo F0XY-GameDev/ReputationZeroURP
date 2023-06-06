@@ -15,6 +15,7 @@ MonoBehaviour:
   ID: 3
   Message: Were you and the victim close?
   PersonName: James
+  PersonID: 1
   HasCondition: 0
   isConditionMet: 1
   ConditionID: 0

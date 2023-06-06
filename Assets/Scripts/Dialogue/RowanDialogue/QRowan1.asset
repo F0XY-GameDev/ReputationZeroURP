@@ -15,6 +15,7 @@ MonoBehaviour:
   ID: 8
   Message: What, you've got a problem with detectives?
   PersonName: Rowan
+  PersonID: 2
   HasCondition: 0
   isConditionMet: 1
   ConditionID: 0
