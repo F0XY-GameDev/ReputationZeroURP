@@ -14,8 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   DialogueID: 0
   PersonName: Unnamed Copper
-  DialogueText: Welcome to the crimescene, Detective, the victim is in the room at
-    the end of the hall here. Get ready to investigate!
+  DialogueText: Welcome to the crimescene, Detective, the victim is in the first
+    room on the right, upstairs. Get ready to investigate!
   IsTestimony: 0
   TestimonyID: 0
   HasCondition: 0
