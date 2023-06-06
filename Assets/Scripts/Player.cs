@@ -13,9 +13,16 @@ public class Player : MonoBehaviour
     public InputActionReference talk;
     public InputActionReference endDialogue;
     public InputActionReference sprint;
+    public InputActionReference walk;
     public float sprintSpeed;
     public float walkSpeed;
     public UnityEvent closeDialogue;
+    public UnityEvent onStartMove;
+    public UnityEvent onStopMove;
+    [SerializeField] AudioSource footstepsSource;
+    [SerializeField] AudioClip walking;
+    [SerializeField] AudioClip running;
+
     public bool isTalking;
 
     ActionBasedContinuousMoveProvider moveProvider; //reference to our MoveProvider used for sprint speed
@@ -31,6 +38,8 @@ public class Player : MonoBehaviour
         endDialogue.action.started += EndTalk;
         sprint.action.started += Sprint;
         sprint.action.canceled += Slow;
+        walk.action.started += Walk;
+        walk.action.canceled += EndWalk;
     }
     public void OnInteract()
     {
@@ -60,23 +69,36 @@ public class Player : MonoBehaviour
             if (colliderGameobject != null) { colliderGameobject.GetComponent<Person>().EngageDialogue(this.gameObject); Debug.Log("EngagedDialogue"); }
         }
     }
-
-    private void EndTalk(InputAction.CallbackContext context)
+    void Walk(InputAction.CallbackContext context)
+    {
+        var inputValue = context.ReadValue<Vector2>();
+        if (inputValue != Vector2.zero)
+        {
+            onStartMove.Invoke();
+        }
+    }
+    void EndWalk(InputAction.CallbackContext context)
+    {
+        onStopMove.Invoke();
+    }
+    void EndTalk(InputAction.CallbackContext context)
     {
         Debug.Log("Dialogue Ended");
         closeDialogue.Invoke();        
     }
 
-    private void Sprint(InputAction.CallbackContext context)
+    void Sprint(InputAction.CallbackContext context)
     {
         Debug.Log("Sprinting");
         moveProvider.moveSpeed = sprintSpeed;
+        footstepsSource.clip = running;
     }
 
     private void Slow(InputAction.CallbackContext context)
     {
         Debug.Log("Slowing Down");
         moveProvider.moveSpeed = walkSpeed;
+        footstepsSource.clip = walking;
     }
 
 

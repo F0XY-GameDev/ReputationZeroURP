@@ -19,6 +19,7 @@ public class EvidencePage : MonoBehaviour
     public Button Next;
     public InputActionReference pageFlip;
     public UnityEvent nextSection;
+    public UnityEvent nextPage;
     public List<string> linkedDescriptions = new List<string>();
     EvidenceData evidenceData;
     
@@ -66,6 +67,7 @@ public class EvidencePage : MonoBehaviour
     }
     public void NextItem()
     {
+        nextPage.Invoke();
         if (CurrentItem == (journal.Evidence.Count - 1))
         {
             nextSection.Invoke();

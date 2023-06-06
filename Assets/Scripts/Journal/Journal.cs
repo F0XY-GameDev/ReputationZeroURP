@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 
 public class Journal : MonoBehaviour
@@ -13,6 +14,7 @@ public class Journal : MonoBehaviour
     public Canvas CoverPage;
     public Canvas PeoplePage;
     public Canvas EvidencePage;
+    public UnityEvent OnPageFlip;
 
     private void Awake()
     {
@@ -33,6 +35,7 @@ public class Journal : MonoBehaviour
         CurrentPage.enabled = false;
         CurrentPage = newPage;
         CurrentPage.enabled = true;
+        OnPageFlip.Invoke();
     }
 
     private void OnEnable()

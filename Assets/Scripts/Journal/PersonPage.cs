@@ -19,6 +19,7 @@ public class PersonPage : MonoBehaviour
     public Button Next;
     public InputActionReference pageFlip;
     public UnityEvent nextSection;
+    public UnityEvent nextPage;
     public List<Testimony> linkedTestimony = new List<Testimony>();
     PersonData personData;
     
@@ -76,6 +77,7 @@ public class PersonPage : MonoBehaviour
 
     public void NextItem()
     {
+        nextPage.Invoke();
         if (CurrentPerson == (journal.Persons.Count - 1))
         {
             nextSection.Invoke();

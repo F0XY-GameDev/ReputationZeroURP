@@ -13,13 +13,11 @@ public class TitlePage : MonoBehaviour
     public TextMeshProUGUI caseTitle;
     public TextMeshProUGUI caseBackground;
     public InputActionReference pageFlip;
-    public UnityEvent nextSection;
-
+    public UnityEvent nextSection;  
     void OnEnable()
     {
         pageFlip.action.started += NextSection;
     }
-
     private void OnDisable()
     {
         pageFlip.action.started -= NextSection;
@@ -28,32 +26,26 @@ public class TitlePage : MonoBehaviour
     {
         pageFlip.action.started -= NextSection;
     }
-
     void NextSection(InputAction.CallbackContext context)
     {
         nextSection.Invoke();
     }
-
     public void ToggleLeftVictim(bool value)
     {
         leftVictim.SetActive(value);
     }
-
     public void ToggleCenterVictim(bool value)
     {
         centerVictim.SetActive(value);
     }
-
     public void ToggleRightVictim(bool value)
     { 
         rightVictim.SetActive(value);
     }
-
     public void SetTitle(string newTitle)
     {
         caseTitle.text = newTitle;
     }
-
     public void SetDescription(string newDescription)
     {
         caseBackground.text = newDescription;
