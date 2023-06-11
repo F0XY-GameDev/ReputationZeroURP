@@ -13,6 +13,8 @@ public class Person : MonoBehaviour, IDiscoverable
     public List<DialogueLine> Lines;
     public List<Question> Responses;
     public DialogueDisplay dialogueDisplay;
+    public string alternateFirstLine;
+    public AudioClip alternateFirstLineVoice;
     public Canvas displayCanvas;
     public UnityEvent OnTalk;
     public UnityEvent OnPersonEnteredTrigger;
@@ -148,5 +150,11 @@ public class Person : MonoBehaviour, IDiscoverable
         Debug.Log("DialogueAccepted");
         OnTalk.Invoke();
         FindObjectOfType<Journal>().UpdatePersons();        
+    }
+
+    public void ChangeFirstLine()
+    {
+        Lines[0].DialogueText = alternateFirstLine;
+        Lines[0].voiceLine = alternateFirstLineVoice;
     }
 }

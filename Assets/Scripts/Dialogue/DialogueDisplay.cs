@@ -10,6 +10,7 @@ public class DialogueDisplay : MonoBehaviour
     int currentDialogueID;    
     Person currentSpeaker;
     public bool isActive;
+    public AudioSource speaker;
     [SerializeField] ResponseDisplay responseDisplay;
     [SerializeField] GameObject canvas;
     [SerializeField] GameObject xCanvas;
@@ -21,7 +22,7 @@ public class DialogueDisplay : MonoBehaviour
     
 
     public void Awake()
-    {
+    {        
         manager = FindObjectOfType<Manager>();
         responseDisplay = FindObjectOfType<ResponseDisplay>();
         dialogueManager = FindObjectOfType<DialogueManager>();
@@ -58,6 +59,7 @@ public class DialogueDisplay : MonoBehaviour
         currentSpeaker = person;
         responseDisplay.SetSpeaker(person);
         SetText(person.Lines[0]);
+        speaker.PlayOneShot(person.Lines[0].voiceLine);
         currentDialogueID = person.Lines[0].DialogueID;
         responseDisplay.BeginResponse(person.Lines[0], this);
     }
@@ -77,7 +79,12 @@ public class DialogueDisplay : MonoBehaviour
         }
         var dialogue = dialogueManager.GetLineByID(question.dialogueIDs[question.dialogueIDs.Count - 1]);
         SetText(dialogue);
+        speaker.PlayOneShot(dialogue.voiceLine);
         dialogue.Say();
+        if (dialogue.changesAfterHearing)
+        {
+            currentSpeaker.ChangeFirstLine();
+        }
         if (dialogue.IsTestimony)
         {
             var personPage = FindObjectOfType<PersonPage>(true);
