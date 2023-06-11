@@ -39,7 +39,6 @@ public class PersonPage : MonoBehaviour
     }
     public void AddTestimony(List<Testimony> testimony)
     {
-        foreach (Testimony firstTestimony in TestimonyList) { foreach (Testimony secondTestimony in testimony) {if (firstTestimony == secondTestimony) { return; } }}
         TestimonyList.AddRange(testimony);
         List<Testimony> sortedList = TestimonyList.OrderBy(x => x.TestimonyID).ToList();
         TestimonyList = sortedList;
