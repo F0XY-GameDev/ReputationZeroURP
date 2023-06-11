@@ -11,6 +11,8 @@ public class SuspectPicking : MonoBehaviour
     public List<bool> CharacterList = new List<bool>();
     public List<GameObject> Characters = new List<GameObject>();
     public List<GameObject> TpLocations = new List<GameObject>();
+    public List<GameObject> Object = new List<GameObject>();
+    public List<GameObject> TpOffice = new List<GameObject>();
 
     public void AlexToggleAccused()
     {
@@ -138,6 +140,14 @@ public class SuspectPicking : MonoBehaviour
         for (int i = 0; i < 8; i++)
         {
             Characters[i].transform.localRotation = TpLocations[i].transform.localRotation;
+        }
+    }
+
+    public void TpToOffice()
+    {
+        for (int i = 0; i < 2; i++)
+        {
+            Object[i].transform.localRotation = TpOffice[i].transform.localRotation;
         }
     }
 }
