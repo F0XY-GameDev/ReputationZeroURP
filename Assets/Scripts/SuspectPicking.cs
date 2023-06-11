@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using UnityEditor.Timeline.Actions;
 using UnityEngine;
 using UnityEngine.Scripting.APIUpdating;
+using UnityEngine.TextCore.Text;
 
 public class SuspectPicking : MonoBehaviour
 {
@@ -131,8 +132,12 @@ public class SuspectPicking : MonoBehaviour
         }
     }
 
+    
     public void NPCTP()
     {
-       Characters = TpLocations;
+        for (int i = 0; i < 8; i++)
+        {
+            Characters[i].transform.localRotation = TpLocations[i].transform.localRotation;
+        }
     }
 }
