@@ -139,6 +139,7 @@ public class SuspectPicking : MonoBehaviour
     {
         for (int i = 0; i < 8; i++)
         {
+            Characters[i].transform.position = TpLocations[i].transform.position;
             Characters[i].transform.localRotation = TpLocations[i].transform.localRotation;
         }
     }
@@ -147,6 +148,7 @@ public class SuspectPicking : MonoBehaviour
     {
         for (int i = 0; i < 2; i++)
         {
+            Object[i].transform.position = TpOffice[i].transform.position;
             Object[i].transform.localRotation = TpOffice[i].transform.localRotation;
         }
     }

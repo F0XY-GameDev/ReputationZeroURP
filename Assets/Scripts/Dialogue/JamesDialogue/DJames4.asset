@@ -15,9 +15,10 @@ MonoBehaviour:
   DialogueID: 11
   PersonName: James
   PersonID: 1
-  DialogueText: That's the Chef, Loretta's knife. I can't say I've ever used it.
-  IsTestimony: 0
-  TestimonyID: 0
+  DialogueText: Pamphlets? Oh, yes! For the Church! Alex and I have found our...
+    spiritual peace. We wish only to share that peace with others.
+  IsTestimony: 1
+  TestimonyID: 2
   HasCondition: 0
   IsConditionMet: 0
   ConditionID: 0
@@ -28,4 +29,4 @@ MonoBehaviour:
   OnSay:
     m_PersistentCalls:
       m_Calls: []
-  responseIDs: 030000000400000006000000
+  responseIDs: 0a000000

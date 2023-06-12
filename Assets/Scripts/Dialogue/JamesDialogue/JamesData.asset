@@ -15,7 +15,7 @@ MonoBehaviour:
   Mugshot: {fileID: 21300000, guid: 919081e8024dea3439274b7c925397c2, type: 3}
   Name: James
   PersonID: 1
-  Relation: 
+  Relation: Butler
   Testimonies:
   - {fileID: 11400000, guid: 29463b9fa7f4c7547827f9f18b8e35f8, type: 2}
   - {fileID: 11400000, guid: 10a56cda716bf944989e2f037f05083f, type: 2}

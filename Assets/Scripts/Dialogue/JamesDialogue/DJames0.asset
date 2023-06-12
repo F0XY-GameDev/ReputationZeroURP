@@ -15,30 +15,19 @@ MonoBehaviour:
   DialogueID: 3
   PersonName: James
   PersonID: 1
-  DialogueText: Hello, I'm James, the butler here.
+  DialogueText: Good day, Sir. I'm James, the butler here. Did you need anything?
   IsTestimony: 0
   TestimonyID: 0
   HasCondition: 0
   IsConditionMet: 1
   ConditionID: 0
+  changesAfterHearing: 1
   canHear: 1
   Discovered: 0
   Hidden: 0
   endsDialogue: 0
+  voiceLine: {fileID: 8300000, guid: c96fc80a5d0fad549801f1e66ed33d0b, type: 3}
   OnSay:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 6706349883775784766, guid: 72705b415c4eb0a49b7b600af37e1851,
-          type: 3}
-        m_TargetAssemblyTypeName: Manager, Assembly-CSharp
-        m_MethodName: UnlockTestimonyByID
-        m_Mode: 3
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
   responseIDs: 030000000400000009000000

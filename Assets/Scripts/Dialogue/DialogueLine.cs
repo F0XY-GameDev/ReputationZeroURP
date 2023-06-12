@@ -15,10 +15,12 @@ public class DialogueLine : ScriptableObject, IDiscoverable, IHideable //as an I
     public bool HasCondition;
     public bool IsConditionMet;
     public int ConditionID;
+    public bool changesAfterHearing;
     public bool canHear;
     public bool Discovered;
     public bool Hidden;
     public bool endsDialogue;
+    public AudioClip voiceLine;
     public UnityEvent OnSay;
     public List<int> responseIDs = new List<int>();
     bool IDiscoverable.Discovered { get => Discovered; set => Discovered = value; }

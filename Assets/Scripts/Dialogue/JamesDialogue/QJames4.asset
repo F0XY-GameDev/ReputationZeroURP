@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: QJames4
   m_EditorClassIdentifier: 
   ID: 9
-  Message: What do you have to say about this Cleaver?
+  Message: What are these pamphlets for?
   PersonName: James
   PersonID: 1
   HasCondition: 0
