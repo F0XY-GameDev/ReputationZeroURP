@@ -10,21 +10,23 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: abcf79f897f54a74aad8ea80bda15d81, type: 3}
-  m_Name: DCop3
+  m_Name: DCop11
   m_EditorClassIdentifier: 
   DialogueID: 10
-  PersonName: Unnamed Copper
-  DialogueText: Hahahaha always the jokester, good one Detective, but uh... Now's
-    not the time for jokes, you need to find out and prove what happened to our Victim!
+  PersonName: Carlos
+  PersonID: 0
+  DialogueText: Alright, another case closed! Time to get a brewski.
   IsTestimony: 0
   TestimonyID: 0
   HasCondition: 0
   IsConditionMet: 1
   ConditionID: 0
+  changesAfterHearing: 0
   canHear: 1
   Discovered: 0
   Hidden: 0
-  endsDialogue: 0
+  endsDialogue: 1
+  voiceLine: {fileID: 8300000, guid: 255397e1cff6e0d449a6fa0929ae5021, type: 3}
   OnSay:
     m_PersistentCalls:
       m_Calls: []

@@ -13,17 +13,23 @@ MonoBehaviour:
   m_Name: DCop2
   m_EditorClassIdentifier: 
   DialogueID: 2
-  PersonName: Unnamed Copper
-  DialogueText: I haven't really had a look, I'll leave the speculation to the informed.
+  PersonName: Carlos
+  PersonID: 0
+  DialogueText: I haven't really had a look, I'll leave the speculation to the informed.The
+    victim is in the Master Bedroom, upstairs.You can choose to go there now, or
+    talk to some of the staff first. Or, if you like, you can just start looking
+    for clues, up to you.
   IsTestimony: 0
   TestimonyID: 0
   HasCondition: 0
   IsConditionMet: 1
   ConditionID: 0
+  changesAfterHearing: 0
   canHear: 1
   Discovered: 0
   Hidden: 0
   endsDialogue: 0
+  voiceLine: {fileID: 8300000, guid: f75662425ccfc674e95969fcf87b5a2c, type: 3}
   OnSay:
     m_PersistentCalls:
       m_Calls: []

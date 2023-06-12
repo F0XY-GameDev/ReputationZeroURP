@@ -10,22 +10,25 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: abcf79f897f54a74aad8ea80bda15d81, type: 3}
-  m_Name: DCop0
+  m_Name: DCop6
   m_EditorClassIdentifier: 
-  DialogueID: 0
-  PersonName: Unnamed Copper
-  DialogueText: Welcome to the crimescene, Detective, the victim is in the first
-    room on the right, upstairs. Get ready to investigate!
+  DialogueID: 10
+  PersonName: Carlos
+  PersonID: 0
+  DialogueText: "You want me to take a look at these? Sure thing! I\u2019ll mark
+    any insights I gain in your journal."
   IsTestimony: 0
   TestimonyID: 0
   HasCondition: 0
   IsConditionMet: 1
   ConditionID: 0
+  changesAfterHearing: 0
   canHear: 1
   Discovered: 0
   Hidden: 0
   endsDialogue: 0
+  voiceLine: {fileID: 8300000, guid: f4344912bb9125a4e9f504b1f0a151f7, type: 3}
   OnSay:
     m_PersistentCalls:
       m_Calls: []
-  responseIDs: 090000000100000002000000
+  responseIDs: 000000000100000002000000
