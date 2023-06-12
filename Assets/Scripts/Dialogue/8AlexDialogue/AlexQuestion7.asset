@@ -12,15 +12,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 198f9f21b6088104eaf69269a70d8a5e, type: 3}
   m_Name: AlexQuestion7
   m_EditorClassIdentifier: 
-  ID: 42
-  Message: I'll have to verify that. Don't go anywhere.
+  ID: 43
+  Message: Somebody heard a lot of commotion after Dinner, are you saying they're
+    lying?
   PersonName: Alex
   PersonID: 8
   HasCondition: 0
-  isConditionMet: 1
+  isConditionMet: 0
   ConditionID: 0
-  Hidden: 0
-  endsDialogue: 1
+  Hidden: 1
+  endsDialogue: 0
   startsSuspectChoosing: 0
   endsSuspectChoosing: 0
-  dialogueIDs: 
+  dialogueIDs: 29000000

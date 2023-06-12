@@ -15,8 +15,10 @@ MonoBehaviour:
   DialogueID: 39
   PersonName: Alex
   PersonID: 8
-  DialogueText: 'Ricardo seemed a bit off to me after '
-  IsTestimony: 0
+  DialogueText: Ricardo seemed a bit off to me after dinner. We were doing dishes
+    and he didn't say a word, he's usually quite talkative. I got to bed after everybody
+    else, but didn't notice much.
+  IsTestimony: 1
   TestimonyID: 0
   HasCondition: 0
   IsConditionMet: 1
