@@ -14,8 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ID: 10
   Message: Yes, these are the people I would like to convict.
-  PersonName: Unnamed Copper
-  PersonID: 0
+  PersonName: Carlos
+  PersonID: 14
   HasCondition: 0
   isConditionMet: 1
   ConditionID: 0

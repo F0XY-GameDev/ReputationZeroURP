@@ -14,7 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ID: 0
   Message: Got it, time to do my thing.
-  PersonName: Unnamed Copper
+  PersonName: Carlos
+  PersonID: 14
   HasCondition: 0
   isConditionMet: 1
   ConditionID: 0

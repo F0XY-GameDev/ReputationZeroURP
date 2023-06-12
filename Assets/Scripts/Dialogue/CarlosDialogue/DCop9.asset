@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   DialogueID: 10
   PersonName: Carlos
-  PersonID: 0
+  PersonID: 14
   DialogueText: "To choose your suspects, just check the box in front of them. When
     you\u2019ve selected all the suspects you\u2019d like to convict, come talk to
     me again."

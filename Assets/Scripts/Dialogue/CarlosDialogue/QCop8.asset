@@ -13,12 +13,12 @@ MonoBehaviour:
   m_Name: QCop8
   m_EditorClassIdentifier: 
   ID: 10
-  Message: Yes, these are the people I would like to convict.
-  PersonName: Unnamed Copper
-  PersonID: 0
+  Message: No, let me think it over again.
+  PersonName: Carlos
+  PersonID: 14
   HasCondition: 0
   isConditionMet: 1
   ConditionID: 0
   Hidden: 0
-  endsDialogue: 0
+  endsDialogue: 1
   dialogueIDs: 0a000000
