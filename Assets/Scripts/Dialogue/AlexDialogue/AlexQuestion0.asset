@@ -10,14 +10,15 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 198f9f21b6088104eaf69269a70d8a5e, type: 3}
-  m_Name: QCop2
+  m_Name: AlexQuestion0
   m_EditorClassIdentifier: 
-  ID: 2
-  Message: Any thoughts on the murder?
-  PersonName: Unnamed Copper
+  ID: 0
+  Message: What do you know about the events of last night?
+  PersonName: Alex
+  PersonID: 8
   HasCondition: 0
   isConditionMet: 1
   ConditionID: 0
   Hidden: 0
   endsDialogue: 0
-  dialogueIDs: 02000000
+  dialogueIDs: 

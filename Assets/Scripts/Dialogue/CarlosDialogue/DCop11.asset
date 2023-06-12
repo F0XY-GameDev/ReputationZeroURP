@@ -10,23 +10,24 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: abcf79f897f54a74aad8ea80bda15d81, type: 3}
-  m_Name: DCop1
+  m_Name: DCop11
   m_EditorClassIdentifier: 
-  DialogueID: 1
-  PersonName: Unnamed Copper
-  DialogueText: Our two main suspects are in the Dining Room, through the doors under
-    the stairs. I've also put your case file on the dining room table. Make sure
-    to fill it with all the Evidence you think is important.
+  DialogueID: 10
+  PersonName: Carlos
+  PersonID: 14
+  DialogueText: Alright, another case closed! Time to get a brewski.
   IsTestimony: 0
   TestimonyID: 0
   HasCondition: 0
   IsConditionMet: 1
   ConditionID: 0
+  changesAfterHearing: 0
   canHear: 1
   Discovered: 0
   Hidden: 0
-  endsDialogue: 0
+  endsDialogue: 1
+  voiceLine: {fileID: 8300000, guid: 255397e1cff6e0d449a6fa0929ae5021, type: 3}
   OnSay:
     m_PersistentCalls:
       m_Calls: []
-  responseIDs: 000000000200000009000000
+  responseIDs: 000000000100000002000000

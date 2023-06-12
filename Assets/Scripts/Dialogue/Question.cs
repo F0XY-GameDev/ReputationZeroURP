@@ -14,6 +14,8 @@ public class Question : ScriptableObject, IHideable, IConditional
     public int ConditionID;
     public bool Hidden;
     public bool endsDialogue;
+    public bool startsSuspectChoosing;
+    public bool endsSuspectChoosing;
     public List<int> dialogueIDs = new List<int>();
     bool IHideable.Hidden { get => Hidden; set => Hidden = value; }
     int IHideable.ID { get => ID; }

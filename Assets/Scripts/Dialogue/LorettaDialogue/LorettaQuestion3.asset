@@ -10,14 +10,15 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 198f9f21b6088104eaf69269a70d8a5e, type: 3}
-  m_Name: QCop1
+  m_Name: LorettaQuestion3
   m_EditorClassIdentifier: 
-  ID: 1
-  Message: Where are the suspects?
-  PersonName: Unnamed Copper
+  ID: 0
+  Message: Do you remember anything that seemed odd that might help?
+  PersonName: Loretta
+  PersonID: 6
   HasCondition: 0
   isConditionMet: 1
   ConditionID: 0
   Hidden: 0
   endsDialogue: 0
-  dialogueIDs: 01000000
+  dialogueIDs: 

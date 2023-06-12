@@ -10,12 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 198f9f21b6088104eaf69269a70d8a5e, type: 3}
-  m_Name: QCop3
+  m_Name: QCop7
   m_EditorClassIdentifier: 
   ID: 10
-  Message: So... What am I doing here?
-  PersonName: Unnamed Copper
-  PersonID: 0
+  Message: Yes, these are the people I would like to convict.
+  PersonName: Carlos
+  PersonID: 14
   HasCondition: 0
   isConditionMet: 1
   ConditionID: 0

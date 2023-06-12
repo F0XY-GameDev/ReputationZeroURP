@@ -10,22 +10,27 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: abcf79f897f54a74aad8ea80bda15d81, type: 3}
-  m_Name: DCop0
+  m_Name: DCop2
   m_EditorClassIdentifier: 
-  DialogueID: 0
-  PersonName: Unnamed Copper
-  DialogueText: Welcome to the crimescene, Detective, the victim is in the first
-    room on the right, upstairs. Get ready to investigate!
+  DialogueID: 2
+  PersonName: Carlos
+  PersonID: 14
+  DialogueText: I haven't really had a look, I'll leave the speculation to the informed.The
+    victim is in the Master Bedroom, upstairs.You can choose to go there now, or
+    talk to some of the staff first. Or, if you like, you can just start looking
+    for clues, up to you.
   IsTestimony: 0
   TestimonyID: 0
   HasCondition: 0
   IsConditionMet: 1
   ConditionID: 0
+  changesAfterHearing: 0
   canHear: 1
   Discovered: 0
   Hidden: 0
   endsDialogue: 0
+  voiceLine: {fileID: 8300000, guid: f75662425ccfc674e95969fcf87b5a2c, type: 3}
   OnSay:
     m_PersistentCalls:
       m_Calls: []
-  responseIDs: 090000000100000002000000
+  responseIDs: 000000000100000009000000
