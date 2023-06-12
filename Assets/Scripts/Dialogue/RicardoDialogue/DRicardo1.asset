@@ -21,10 +21,12 @@ MonoBehaviour:
   HasCondition: 0
   IsConditionMet: 1
   ConditionID: 0
+  changesAfterHearing: 0
   canHear: 1
   Discovered: 0
   Hidden: 0
   endsDialogue: 0
+  voiceLine: {fileID: 8300000, guid: 7dd918f2869d2d345bb90176ede654be, type: 3}
   OnSay:
     m_PersistentCalls:
       m_Calls: []

@@ -10,24 +10,25 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: abcf79f897f54a74aad8ea80bda15d81, type: 3}
-  m_Name: DRicardo7
+  m_Name: DManuel2
   m_EditorClassIdentifier: 
-  DialogueID: 0
-  PersonName: Ricardo
-  PersonID: 1
-  DialogueText: 'I.. I''ve said too much.. '
+  DialogueID: 2
+  PersonName: Manuel
+  PersonID: 3
+  DialogueText: No, like I said.. I heard a commotion yesterday evening. At around
+    10, but that's about it.
   IsTestimony: 0
   TestimonyID: 0
   HasCondition: 0
-  IsConditionMet: 0
+  IsConditionMet: 1
   ConditionID: 0
   changesAfterHearing: 0
-  canHear: 0
+  canHear: 1
   Discovered: 0
   Hidden: 0
   endsDialogue: 0
-  voiceLine: {fileID: 8300000, guid: 68dcf6b71bcc2ce409d7befc64dddad4, type: 3}
+  voiceLine: {fileID: 8300000, guid: ff0fa1e92372cc24ea02eee3b9eee0a8, type: 3}
   OnSay:
     m_PersistentCalls:
       m_Calls: []
-  responseIDs: 07000000
+  responseIDs: 03000000

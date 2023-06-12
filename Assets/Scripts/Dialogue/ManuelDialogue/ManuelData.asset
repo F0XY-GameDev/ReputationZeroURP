@@ -10,11 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ba6a3a0bcfb93f340ab879063a0759e7, type: 3}
-  m_Name: RicardoData
+  m_Name: ManuelData
   m_EditorClassIdentifier: 
   Mugshot: {fileID: 0}
-  Name: Ricardo
-  PersonID: 1
+  Name: Manuel
+  PersonID: 3
   Relation: 
   Testimonies: []
   Descriptions: []

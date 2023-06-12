@@ -15,16 +15,18 @@ MonoBehaviour:
   DialogueID: 0
   PersonName: Ricardo
   PersonID: 1
-  DialogueText: The letter! You have to find the letter she wrote me.
+  DialogueText: The letter! The letter.. You have to find the letter she wrote me.
   IsTestimony: 0
   TestimonyID: 0
   HasCondition: 0
   IsConditionMet: 0
   ConditionID: 0
+  changesAfterHearing: 0
   canHear: 0
   Discovered: 0
   Hidden: 0
   endsDialogue: 1
+  voiceLine: {fileID: 8300000, guid: 42da59b5747f02e48badb755b57d3244, type: 3}
   OnSay:
     m_PersistentCalls:
       m_Calls: []

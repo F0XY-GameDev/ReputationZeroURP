@@ -15,17 +15,19 @@ MonoBehaviour:
   DialogueID: 2
   PersonName: Ricardo
   PersonID: 1
-  DialogueText: It's not what it look like... I would never hurt her! The Lady and
-    I... we were lovers!
+  DialogueText: It's.. It's not what it looks like... I.. I would never hurt her!
+    The Lady and I... we.. we were lovers!
   IsTestimony: 0
   TestimonyID: 0
   HasCondition: 0
   IsConditionMet: 0
   ConditionID: 0
+  changesAfterHearing: 0
   canHear: 0
   Discovered: 0
   Hidden: 0
   endsDialogue: 0
+  voiceLine: {fileID: 8300000, guid: 013033df037d8ee4fa57cfee02916166, type: 3}
   OnSay:
     m_PersistentCalls:
       m_Calls: []

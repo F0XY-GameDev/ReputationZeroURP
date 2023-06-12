@@ -15,17 +15,19 @@ MonoBehaviour:
   DialogueID: 0
   PersonName: Ricardo
   PersonID: 1
-  DialogueText: Last night, after dinner, I went to see her, and he was yelling.
-    I... I panicked.
+  DialogueText: Last night, after dinner, I.. I went to see her, and he was yelling.
+    I... I panicked, okay..?
   IsTestimony: 0
   TestimonyID: 0
   HasCondition: 0
   IsConditionMet: 0
   ConditionID: 0
+  changesAfterHearing: 0
   canHear: 0
   Discovered: 0
   Hidden: 0
   endsDialogue: 0
+  voiceLine: {fileID: 8300000, guid: ee7ba80a75a1711449a33672dee8295c, type: 3}
   OnSay:
     m_PersistentCalls:
       m_Calls: []

@@ -15,17 +15,19 @@ MonoBehaviour:
   DialogueID: 0
   PersonName: Ricardo
   PersonID: 1
-  DialogueText: I.. I killed Reginald. I... I thought... maybe we could have a life
-    together, Alexandra and I.
+  DialogueText: I.. I killed Reginald. I thought... I thought... me and Alexandra...
+    I thought we could have a life together.
   IsTestimony: 0
   TestimonyID: 0
   HasCondition: 0
   IsConditionMet: 0
   ConditionID: 0
+  changesAfterHearing: 0
   canHear: 0
   Discovered: 0
   Hidden: 0
   endsDialogue: 0
+  voiceLine: {fileID: 8300000, guid: 1eddb442be951a142a5672d10e362f71, type: 3}
   OnSay:
     m_PersistentCalls:
       m_Calls: []

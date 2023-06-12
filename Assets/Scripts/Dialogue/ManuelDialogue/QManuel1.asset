@@ -9,13 +9,16 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ba6a3a0bcfb93f340ab879063a0759e7, type: 3}
-  m_Name: RicardoData
+  m_Script: {fileID: 11500000, guid: 198f9f21b6088104eaf69269a70d8a5e, type: 3}
+  m_Name: QManuel1
   m_EditorClassIdentifier: 
-  Mugshot: {fileID: 0}
-  Name: Ricardo
-  PersonID: 1
-  Relation: 
-  Testimonies: []
-  Descriptions: []
-  manager: {fileID: 0}
+  ID: 1
+  Message: I'll be back.
+  PersonName: Manuel
+  PersonID: 3
+  HasCondition: 0
+  isConditionMet: 1
+  ConditionID: 0
+  Hidden: 0
+  endsDialogue: 1
+  dialogueIDs: 
