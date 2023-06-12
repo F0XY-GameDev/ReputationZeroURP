@@ -1,0 +1,32 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: abcf79f897f54a74aad8ea80bda15d81, type: 3}
+  m_Name: DRicardo2
+  m_EditorClassIdentifier: 
+  DialogueID: 2
+  PersonName: Ricardo
+  PersonID: 1
+  DialogueText: It's not what it look like... I would never hurt her! The Lady and
+    I... we were lovers!
+  IsTestimony: 0
+  TestimonyID: 0
+  HasCondition: 0
+  IsConditionMet: 0
+  ConditionID: 0
+  canHear: 0
+  Discovered: 0
+  Hidden: 0
+  endsDialogue: 0
+  OnSay:
+    m_PersistentCalls:
+      m_Calls: []
+  responseIDs: 04000000
