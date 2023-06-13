@@ -12,10 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7775d3438ab2c5b4e96b232cedea6388, type: 3}
   m_Name: CleaverData
   m_EditorClassIdentifier: 
-  ItemPicture: {fileID: 0}
+  ItemPicture: {fileID: 21300000, guid: cc9d80a4dcb5cc64b965a840142aa967, type: 3}
   ItemName: Butcher's Knife
   EvidenceID: 1
   FoundLocation: Kitchen, on the counter
-  EvidenceDescriptions: []
+  EvidenceDescriptions:
+  - {fileID: 11400000, guid: db0343c4cf504cf4f9846fc58aeaeda3, type: 2}
   Descriptions: []
   manager: {fileID: 0}

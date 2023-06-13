@@ -12,10 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7775d3438ab2c5b4e96b232cedea6388, type: 3}
   m_Name: SmartPhoneData
   m_EditorClassIdentifier: 
-  ItemPicture: {fileID: 0}
+  ItemPicture: {fileID: 21300000, guid: b18acc9f755482742b90175497dafa60, type: 3}
   ItemName: Victim's Phone
   EvidenceID: 12
   FoundLocation: Upstairs Study
-  EvidenceDescriptions: []
+  EvidenceDescriptions:
+  - {fileID: 11400000, guid: 3d436eea946eb2a479003beb10b9a5d2, type: 2}
   Descriptions: []
   manager: {fileID: 0}

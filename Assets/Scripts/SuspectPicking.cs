@@ -45,7 +45,7 @@ public class SuspectPicking : MonoBehaviour
         }
     }
 
-    public void JannaToggleAccused()
+    public void LorettaToggleAccused()
     {
         if (CharacterList[2] == true)
         {
@@ -60,7 +60,7 @@ public class SuspectPicking : MonoBehaviour
         }
     }
 
-    public void LorettaToggleAccused()
+    public void ManyelToggleAccused()
     {
         if (CharacterList[3] == true)
         {
@@ -75,7 +75,7 @@ public class SuspectPicking : MonoBehaviour
         }
     }
 
-    public void ManyelToggleAccused()
+    public void RicardoToggleAccused()
     {
         if (CharacterList[4] == true)
         {
@@ -90,50 +90,6 @@ public class SuspectPicking : MonoBehaviour
         }
     }
 
-    public void MelissaToggleAccused()
-    {
-        if (CharacterList[5] == true)
-        {
-            CharacterList[5] = false;
-            return;
-        }
-
-        if (CharacterList[5] == false)
-        {
-            CharacterList[5] = true;
-            return;
-        }
-    }
-
-    public void RicardoToggleAccused()
-    {
-        if (CharacterList[6] == true)
-        {
-            CharacterList[6] = false;
-            return;
-        }
-
-        if (CharacterList[6] == false)
-        {
-            CharacterList[6] = true;
-            return;
-        }
-    }
-
-    public void RowanToggleAccused()
-    {
-        if (CharacterList[7] == true)
-        {
-            CharacterList[7] = false;
-            return;
-        }
-
-        if (CharacterList[7] == false)
-        {
-            CharacterList[7] = true;
-            return;
-        }
-    }
 
     public void InitiateTP()
     {
@@ -167,6 +123,17 @@ public class SuspectPicking : MonoBehaviour
     {
         yield return new WaitForSeconds(2f);
         TpToOffice();
+    }
+    public void TryTPToOffice()
+    {
+        foreach (bool suspect in CharacterList)
+        {
+            if (suspect == true)
+            {
+                InitiateOffice();
+                return;
+            }
+        }
     }
 
     public void TpToOffice()

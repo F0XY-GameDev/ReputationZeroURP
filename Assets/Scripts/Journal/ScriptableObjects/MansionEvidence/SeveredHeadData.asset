@@ -12,10 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7775d3438ab2c5b4e96b232cedea6388, type: 3}
   m_Name: SeveredHeadData
   m_EditorClassIdentifier: 
-  ItemPicture: {fileID: 0}
+  ItemPicture: {fileID: 21300000, guid: 5c42f4a43d5a44c45a60e07d38406cbb, type: 3}
   ItemName: Severed Head
   EvidenceID: 10
   FoundLocation: Master Bedroom, on the Bed
-  EvidenceDescriptions: []
+  EvidenceDescriptions:
+  - {fileID: 11400000, guid: 14feb53abe4e1e242856e26286195c22, type: 2}
   Descriptions: []
   manager: {fileID: 0}

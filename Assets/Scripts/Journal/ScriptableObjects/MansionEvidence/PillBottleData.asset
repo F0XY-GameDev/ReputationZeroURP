@@ -12,10 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7775d3438ab2c5b4e96b232cedea6388, type: 3}
   m_Name: PillBottleData
   m_EditorClassIdentifier: 
-  ItemPicture: {fileID: 0}
+  ItemPicture: {fileID: 21300000, guid: b2b324c799fde934b8648db5664348ea, type: 3}
   ItemName: Pill Bottle
   EvidenceID: 8
   FoundLocation: Upstairs Study
-  EvidenceDescriptions: []
+  EvidenceDescriptions:
+  - {fileID: 11400000, guid: 9c3d37e66c02fd14699b2d28f7c1ff05, type: 2}
+  - {fileID: 11400000, guid: 6851898799aed7a4d8acbc16c4e84444, type: 2}
   Descriptions: []
   manager: {fileID: 0}

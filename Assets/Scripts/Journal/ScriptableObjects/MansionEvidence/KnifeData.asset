@@ -12,10 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7775d3438ab2c5b4e96b232cedea6388, type: 3}
   m_Name: KnifeData
   m_EditorClassIdentifier: 
-  ItemPicture: {fileID: 0}
+  ItemPicture: {fileID: 21300000, guid: e652c0443fa0e4f4e903c77b7142a348, type: 3}
   ItemName: Small Knife
   EvidenceID: 17
   FoundLocation: Master Bedroom, under the bed
-  EvidenceDescriptions: []
+  EvidenceDescriptions:
+  - {fileID: 11400000, guid: 19b274535857d0b4a858bd362560a9a2, type: 2}
+  - {fileID: 11400000, guid: a90a547469bd8a044902bb3e32bd431e, type: 2}
   Descriptions: []
   manager: {fileID: 0}

@@ -12,10 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7775d3438ab2c5b4e96b232cedea6388, type: 3}
   m_Name: AlexandrasLetter
   m_EditorClassIdentifier: 
-  ItemPicture: {fileID: 0}
+  ItemPicture: {fileID: 21300000, guid: ecd1831698adcbc4faf8fa59d5621e50, type: 3}
   ItemName: Alexandra's letter
   EvidenceID: 33
   FoundLocation: Ricardo's room, on the bedstand
-  EvidenceDescriptions: []
+  EvidenceDescriptions:
+  - {fileID: 11400000, guid: 7a0d62557a6a9e947a5dcf83cf89e906, type: 2}
   Descriptions: []
   manager: {fileID: 0}
