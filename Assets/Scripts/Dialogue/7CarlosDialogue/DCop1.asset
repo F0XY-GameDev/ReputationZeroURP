@@ -28,8 +28,9 @@ MonoBehaviour:
   Discovered: 0
   Hidden: 0
   endsDialogue: 0
+  spawnsJournal: 1
   voiceLine: {fileID: 8300000, guid: d83ae0ab7ca3c0743b0ba0ba45fae5c6, type: 3}
   OnSay:
     m_PersistentCalls:
       m_Calls: []
-  responseIDs: 000000000200000009000000
+  responseIDs: 1c0000001d0000001e000000

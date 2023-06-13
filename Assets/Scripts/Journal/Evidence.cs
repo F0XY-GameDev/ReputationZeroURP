@@ -58,6 +58,20 @@ public class Evidence : MonoBehaviour, IDiscoverable
         audioSource.PlayOneShot(audioClip, 1f);
         FindObjectOfType<Journal>().UpdateEvidence();
         OnBagEvidence.Invoke();
+        var manager = FindObjectOfType<Manager>();
+        if (manager != null && !manager.hasEvidence)
+        {
+            FindObjectOfType<Manager>().hasEvidence = true;
+            var allPersons = FindObjectsOfType<Person>();
+            foreach (Person person in allPersons)
+            {
+                if (person.PersonData.PersonID == 7)
+                {
+                    var cop = person;
+                    cop.SwapToPersonData(cop.alternatePersonData);
+                }
+            }
+        }       
     }
 
     void SetEvidenceConditions()

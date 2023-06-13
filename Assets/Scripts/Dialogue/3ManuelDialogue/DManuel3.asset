@@ -18,8 +18,8 @@ MonoBehaviour:
   DialogueText: Oh! I heard something around.. hmm.. maybe 2 am? I think somebody
     went into Ricardo's room around that time. Couldn't have stayed more than 2-3
     minutes.. so..
-  IsTestimony: 0
-  TestimonyID: 0
+  IsTestimony: 1
+  TestimonyID: 8
   HasCondition: 0
   IsConditionMet: 1
   ConditionID: 0
@@ -28,7 +28,7 @@ MonoBehaviour:
   Discovered: 0
   Hidden: 0
   endsDialogue: 0
-  voiceLine: {fileID: 0}
+  voiceLine: {fileID: 8300000, guid: c0b2a376b209a0e4ebb804d136cbb0a2, type: 3}
   OnSay:
     m_PersistentCalls:
       m_Calls: []

@@ -17,8 +17,8 @@ MonoBehaviour:
   PersonID: 3
   DialogueText: Wait.. I've seen those somewhere.. Oh! I was taking out the trash
     from the staff room, this was also in Alex's trash!
-  IsTestimony: 0
-  TestimonyID: 0
+  IsTestimony: 1
+  TestimonyID: 9
   HasCondition: 0
   IsConditionMet: 0
   ConditionID: 0

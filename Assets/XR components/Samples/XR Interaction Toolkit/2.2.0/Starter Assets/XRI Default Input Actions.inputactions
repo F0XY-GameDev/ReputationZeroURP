@@ -879,6 +879,15 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
+                },
+                {
+                    "name": "StopInteract",
+                    "type": "Button",
+                    "id": "effd93ec-0f03-4515-993f-d83699464d1a",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -973,7 +982,7 @@
                 {
                     "name": "",
                     "id": "b75a5789-299a-4d56-96a6-c21b51951774",
-                    "path": "<OculusTouchController>{RightHand}/primaryButton",
+                    "path": "<XRController>{RightHand}/primaryButton",
                     "interactions": "",
                     "processors": "",
                     "groups": "Generic XR Controller",
@@ -989,6 +998,17 @@
                     "processors": "",
                     "groups": "",
                     "action": "Page Flip",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "feb5838c-19a2-4f3d-885a-6a9504a4ffd8",
+                    "path": "<XRController>{RightHand}/secondaryButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "StopInteract",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

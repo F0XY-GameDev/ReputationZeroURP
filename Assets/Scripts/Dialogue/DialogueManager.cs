@@ -45,12 +45,13 @@ public class DialogueManager : MonoBehaviour //dialoguemanager holds the dialogu
         {
             //CHECK BUILD INDEX TO FIND WHICH SCENE IS WHERE
             case (0):
-                filename = "partyDialogue.json";
+                filename = "mansionDialogue.json";
                 break;
             case (1):
                 filename = "mansionDialogue.json";
                 break;
             default:
+                filename = "mansionDialogue.json";
                 break;
         }
 
@@ -59,13 +60,9 @@ public class DialogueManager : MonoBehaviour //dialoguemanager holds the dialogu
         
         if (File.Exists(fullPath))
         {
-            using (var inStream = new FileStream(fullPath, FileMode.Open))
-            {
-                using (var reader = new StreamReader(inStream))
-                {
-                    LoadedDialogueConfig = JsonConvert.DeserializeObject<DialogueConfig>(reader.ReadToEnd());
-                }
-            }
+            var defConfig = new DialogueConfig();
+            defConfig.Lines.AddRange(allDialogue);
+            LoadedDialogueConfig = defConfig;
         }
         else
         {

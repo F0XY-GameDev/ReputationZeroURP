@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   DialogueID: 24
   PersonName: Carlos
-  PersonID: 7
+  PersonID: 99
   DialogueText: "Hey! Come over here, I\u2019ve got some stuff for you detective!"
   IsTestimony: 0
   TestimonyID: 0

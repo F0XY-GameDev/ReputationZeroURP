@@ -16,8 +16,8 @@ MonoBehaviour:
   PersonName: Ricardo
   PersonID: 1
   DialogueText: The letter! The letter.. You have to find the letter she wrote me.
-  IsTestimony: 0
-  TestimonyID: 0
+  IsTestimony: 1
+  TestimonyID: 4
   HasCondition: 0
   IsConditionMet: 0
   ConditionID: 0

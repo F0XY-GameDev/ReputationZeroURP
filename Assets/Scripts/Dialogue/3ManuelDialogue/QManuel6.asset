@@ -19,6 +19,8 @@ MonoBehaviour:
   HasCondition: 0
   isConditionMet: 0
   ConditionID: 0
-  Hidden: 0
+  Hidden: 1
   endsDialogue: 0
+  startsSuspectChoosing: 0
+  endsSuspectChoosing: 0
   dialogueIDs: 05000000

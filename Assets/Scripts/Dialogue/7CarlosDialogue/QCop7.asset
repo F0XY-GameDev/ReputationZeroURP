@@ -15,12 +15,12 @@ MonoBehaviour:
   ID: 34
   Message: Yes, these are the people I would like to convict.
   PersonName: Carlos
-  PersonID: 7
+  PersonID: 25
   HasCondition: 0
   isConditionMet: 1
   ConditionID: 0
   Hidden: 0
   endsDialogue: 0
   startsSuspectChoosing: 0
-  endsSuspectChoosing: 0
+  endsSuspectChoosing: 1
   dialogueIDs: 0a000000

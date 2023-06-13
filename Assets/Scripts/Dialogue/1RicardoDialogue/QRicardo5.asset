@@ -17,7 +17,7 @@ MonoBehaviour:
   PersonName: Ricardo
   PersonID: 1
   HasCondition: 0
-  isConditionMet: 0
+  isConditionMet: 1
   ConditionID: 0
   Hidden: 0
   endsDialogue: 0

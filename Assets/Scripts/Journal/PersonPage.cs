@@ -21,7 +21,7 @@ public class PersonPage : MonoBehaviour
     public UnityEvent nextSection;
     public UnityEvent nextPage;
     public List<Testimony> linkedTestimony = new List<Testimony>();
-    PersonData personData;
+    public PersonData personData;
     
     // Update is called once per frame
     void Update()
@@ -33,6 +33,7 @@ public class PersonPage : MonoBehaviour
         linkedTestimony = GetTestimonyByPersonID(personData.PersonID);
         for (int i = 0; i < Testimony.Count; i++)
         {
+            Testimony[i].text = "";
             Testimony[i].text = linkedTestimony[i].Text;
             //Testimony[i].text = journal.Persons[CurrentPerson].Descriptions[i];
         }
@@ -46,17 +47,14 @@ public class PersonPage : MonoBehaviour
     public List<Testimony> GetTestimonyByPersonID(int id)
     {
         List<Testimony> list = TestimonyList.Where(x => x.PersonID == id).ToList();
-        List<Testimony> sortedList = list.OrderBy(x => x.TestimonyID).ToList();
+        List<Testimony> secondlist = list.Where(x => x.Discovered == true).ToList();
+        List<Testimony> sortedList = secondlist.OrderBy(x => x.TestimonyID).ToList();
         return list;
     }
 
     private void OnEnable()
     {
-        pageFlip.action.started += NextPage;
-        if (CurrentPerson < (journal.Persons.Count - 1))
-        {
-            Next.interactable = true;
-        }
+        pageFlip.action.started += NextPage;        
     }
 
     private void OnDisable()
@@ -84,10 +82,5 @@ public class PersonPage : MonoBehaviour
             return;
         }
         CurrentPerson++;
-        if (CurrentPerson == (journal.Persons.Count - 1))
-        {
-            Next.interactable = false;
-        }
-
     }    
 }

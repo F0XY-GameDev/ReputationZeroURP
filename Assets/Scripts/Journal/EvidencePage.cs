@@ -44,11 +44,7 @@ public class EvidencePage : MonoBehaviour
 
     private void OnEnable()
     {        
-        pageFlip.action.started += NextPage;
-        if(CurrentItem < (journal.Evidence.Count - 1))
-        {
-            Next.interactable = true;
-        }
+        pageFlip.action.started += NextPage;        
     }
 
     private void OnDisable()
@@ -74,10 +70,5 @@ public class EvidencePage : MonoBehaviour
             return;
         }
         CurrentItem++;
-        if (CurrentItem == (journal.Evidence.Count - 1))
-        {
-            Next.interactable = false;
-        }
-
     }
 }

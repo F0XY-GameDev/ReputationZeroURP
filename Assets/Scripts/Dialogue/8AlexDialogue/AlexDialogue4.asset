@@ -16,7 +16,7 @@ MonoBehaviour:
   PersonName: Alex
   PersonID: 8
   DialogueText: I barely interacted with her.
-  IsTestimony: 0
+  IsTestimony: 1
   TestimonyID: 0
   HasCondition: 0
   IsConditionMet: 1

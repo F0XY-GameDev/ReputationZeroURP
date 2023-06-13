@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   DialogueID: 33
   PersonName: Carlos
-  PersonID: 7
+  PersonID: 25
   DialogueText: "To choose your suspects, just check the box in front of them. When
     you\u2019ve selected all the suspects you\u2019d like to convict, come talk to
     me again."
@@ -27,9 +27,9 @@ MonoBehaviour:
   canHear: 1
   Discovered: 0
   Hidden: 0
-  endsDialogue: 0
+  endsDialogue: 1
   voiceLine: {fileID: 8300000, guid: c4a0aeb6240b6854d848892792423b6b, type: 3}
   OnSay:
     m_PersistentCalls:
       m_Calls: []
-  responseIDs: 000000000100000002000000
+  responseIDs: 

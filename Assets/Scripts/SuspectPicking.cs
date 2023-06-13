@@ -1,10 +1,8 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
-using UnityEditor.Timeline.Actions;
 using UnityEngine;
-using UnityEngine.Scripting.APIUpdating;
-using UnityEngine.TextCore.Text;
+using System.Linq;
 
 public class SuspectPicking : MonoBehaviour
 {
@@ -13,6 +11,9 @@ public class SuspectPicking : MonoBehaviour
     public List<GameObject> TpLocations = new List<GameObject>();
     public List<GameObject> Object = new List<GameObject>();
     public List<GameObject> TpOffice = new List<GameObject>();
+    public List<GameObject> convictBoxes = new List<GameObject>();
+    public FadeScreen fadeScreen;
+    public int hiddenDialogueUnlockCount;
 
     public void AlexToggleAccused()
     {
@@ -134,18 +135,45 @@ public class SuspectPicking : MonoBehaviour
         }
     }
 
-    
+    public void InitiateTP()
+    {
+        fadeScreen.FadeOut();
+        WaitForFadeScreen();
+    }
+    public void InitiateOffice()
+    {
+        fadeScreen.FadeOut();
+        WaitForFadeScreenOffice();
+    }
+    public IEnumerator WaitForFadeScreen()
+    {
+        yield return new WaitForSeconds(2f);
+        NPCTP();
+    }
     public void NPCTP()
     {
         for (int i = 0; i < 8; i++)
         {
+            Characters[i].GetComponent<SphereCollider>().enabled = false;
             Characters[i].transform.position = TpLocations[i].transform.position;
             Characters[i].transform.localRotation = TpLocations[i].transform.localRotation;
+            convictBoxes[i].SetActive(true);
+            fadeScreen.FadeIn();
         }
+    }
+    public IEnumerator WaitForFadeScreenOffice()
+    {
+        yield return new WaitForSeconds(2f);
+        TpToOffice();
     }
 
     public void TpToOffice()
     {
+        var allPersons = FindObjectsOfType<Person>().ToList();
+        for (int i = 0; i < allPersons.Count - 1; i++)
+        {
+            hiddenDialogueUnlockCount += allPersons[i].testimonyCount;
+        }
         for (int i = 0; i < 2; i++)
         {
             Object[i].transform.position = TpOffice[i].transform.position;

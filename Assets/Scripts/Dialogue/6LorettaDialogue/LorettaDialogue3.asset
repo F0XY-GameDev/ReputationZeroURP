@@ -17,7 +17,7 @@ MonoBehaviour:
   PersonID: 6
   DialogueText: 'Umm... Ah! When the helpers were taking out the food, was it Alex
     or Ricardo...? Oh I can''t remember, I just know the food smelled wrong... different. '
-  IsTestimony: 0
+  IsTestimony: 1
   TestimonyID: 0
   HasCondition: 0
   IsConditionMet: 1

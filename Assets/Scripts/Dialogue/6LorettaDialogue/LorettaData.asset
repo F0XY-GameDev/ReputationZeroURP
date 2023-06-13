@@ -12,10 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ba6a3a0bcfb93f340ab879063a0759e7, type: 3}
   m_Name: LorettaData
   m_EditorClassIdentifier: 
-  Mugshot: {fileID: 21300000, guid: c50c0502846908c4fa9b8b9b184bfdf2, type: 3}
+  Mugshot: {fileID: 21300000, guid: 05a9c5ed670d9714f8f48503f180569d, type: 3}
   Name: Loretta
   PersonID: 6
   Relation: Chef at Thorpton Manor
-  Testimonies: []
+  Testimonies:
+  - {fileID: 11400000, guid: 19a846143933d974ba13ef2e3e03a325, type: 2}
   Descriptions: []
   manager: {fileID: 0}

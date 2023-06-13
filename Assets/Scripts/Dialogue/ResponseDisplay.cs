@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.InputSystem.Controls;
+using UnityEngine.Events;
 
 public class ResponseDisplay : MonoBehaviour
 {
@@ -23,7 +24,11 @@ public class ResponseDisplay : MonoBehaviour
     [SerializeField] Transform playerTransform;
     [SerializeField] Vector3 attachOffset;
     [SerializeField] Vector3 scale;
-    
+    public UnityEvent OnStartSuspectChoice;
+    public UnityEvent OnEndSuspectChoice;
+    [SerializeField] Journal journal;
+    public GameObject journalOBJ;
+    public GameObject attachPoint;
 
 
 
@@ -55,6 +60,11 @@ public class ResponseDisplay : MonoBehaviour
     {
         player.isTalking = true;
         dialogueDisplay = _dialogueDisplay;
+        if (dialogue.spawnsJournal)
+        {
+            journalOBJ.transform.position = attachPoint.transform.position;
+            journalOBJ.transform.rotation = attachPoint.transform.rotation;
+        }
         var transform = dialogueDisplay.GetComponentsInChildren<Transform>();
         foreach (Transform t in transform)
         {
@@ -102,6 +112,14 @@ public class ResponseDisplay : MonoBehaviour
     {
         ClearText();
         dialogueDisplay.AdvanceDialogueByResponse(currentAvailableQuestions[value]);
+        if (currentAvailableQuestions[value].startsSuspectChoosing)
+        {
+            OnStartSuspectChoice.Invoke();
+        }
+        if (currentAvailableQuestions[value].endsSuspectChoosing)
+        {
+            OnEndSuspectChoice.Invoke();
+        }
     }
 
     public void SetText(DialogueLine dialogue)

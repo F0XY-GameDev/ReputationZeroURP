@@ -32,7 +32,7 @@ public class ResponseManager : MonoBehaviour //dialoguemanager holds the dialogu
         {
             //CHECK BUILD INDEX TO FIND WHICH SCENE IS WHERE
             case (0):
-                filename = "partyQuestions.json";
+                filename = "mansionQuestions.json";
                 break;
             case (1):
                 filename = "mansionQuestions.json";

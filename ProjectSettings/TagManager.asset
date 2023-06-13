@@ -11,6 +11,8 @@ TagManager:
   - USB
   - Button
   - Attach
+  - Cop
+  - ConvictCheck
   layers:
   - Default
   - TransparentFX

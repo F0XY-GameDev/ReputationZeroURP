@@ -12,11 +12,6 @@ public class PersonData : ScriptableObject
     public List<Testimony> Testimonies = new List<Testimony>();
     public List<string> Descriptions = new List<string>();
     public Manager manager;
-    public void OnEnable()
-    {
-        manager = FindObjectOfType<Manager>();
-        Descriptions.AddRange(manager.GetTestimonyTextByID(PersonID));
-        Debug.Log("OnEnable " + Name);
-    }
+    
 
 }

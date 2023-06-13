@@ -15,12 +15,12 @@ MonoBehaviour:
   ID: 33
   Message: I'd like to pick from the suspects.
   PersonName: Carlos
-  PersonID: 7
+  PersonID: 25
   HasCondition: 0
   isConditionMet: 1
   ConditionID: 0
   Hidden: 0
   endsDialogue: 0
-  startsSuspectChoosing: 0
+  startsSuspectChoosing: 1
   endsSuspectChoosing: 0
-  dialogueIDs: 0a000000
+  dialogueIDs: 20000000

@@ -19,7 +19,7 @@ MonoBehaviour:
   HasCondition: 0
   isConditionMet: 0
   ConditionID: 0
-  Hidden: 1
+  Hidden: 0
   endsDialogue: 0
   startsSuspectChoosing: 0
   endsSuspectChoosing: 0

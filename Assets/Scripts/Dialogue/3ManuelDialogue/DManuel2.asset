@@ -17,8 +17,8 @@ MonoBehaviour:
   PersonID: 3
   DialogueText: No, like I said.. I heard a commotion yesterday evening. At around
     10, but that's about it.
-  IsTestimony: 0
-  TestimonyID: 0
+  IsTestimony: 1
+  TestimonyID: 7
   HasCondition: 0
   IsConditionMet: 1
   ConditionID: 0

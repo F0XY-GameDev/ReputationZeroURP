@@ -12,10 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ba6a3a0bcfb93f340ab879063a0759e7, type: 3}
   m_Name: CopData
   m_EditorClassIdentifier: 
-  Mugshot: {fileID: 21300000, guid: 6f62fea266abc584b950e3085ee95ea5, type: 3}
+  Mugshot: {fileID: 21300000, guid: c9b9a546f74e496419562b8691039e3c, type: 3}
   Name: Carlos
   PersonID: 7
-  Relation: Friend of Yours, Unlikely to be Perpetrator
+  Relation: Colleague of Yours, Unlikely to be Perpetrator
   Testimonies: []
   Descriptions: []
   manager: {fileID: 0}

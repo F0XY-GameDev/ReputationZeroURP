@@ -12,12 +12,7 @@ public class EvidenceData : ScriptableObject
     public List<EvidenceDescription> EvidenceDescriptions = new List<EvidenceDescription>();
     public List<string> Descriptions = new List<string>();
     public Manager manager;
-    public void OnEnable()
-    {
-        manager = FindObjectOfType<Manager>();
-        Descriptions.AddRange(manager.GetEvidenceDescriptionsByID(EvidenceID));
-        Debug.Log("OnEnable " + ItemName);
-    }
+    
 
     public void UpdateDescriptions()
     {

@@ -14,8 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   DialogueID: 31
   PersonName: Carlos
-  PersonID: 7
-  DialogueText: Are you ready to choose a suspect, or would you like to analyze something?
+  PersonID: 25
+  DialogueText: "You want me to take a look at these? Sure thing! I\u2019ll mark
+    any insights I gain in your journal."
   IsTestimony: 0
   TestimonyID: 0
   HasCondition: 0
@@ -25,9 +26,9 @@ MonoBehaviour:
   canHear: 1
   Discovered: 0
   Hidden: 0
-  endsDialogue: 0
-  voiceLine: {fileID: 8300000, guid: bce5b076989438f469b22598e1796548, type: 3}
+  endsDialogue: 1
+  voiceLine: {fileID: 8300000, guid: f4344912bb9125a4e9f504b1f0a151f7, type: 3}
   OnSay:
     m_PersistentCalls:
       m_Calls: []
-  responseIDs: 000000000100000002000000
+  responseIDs: 

@@ -15,10 +15,9 @@ MonoBehaviour:
   DialogueID: 26
   PersonName: Carlos
   PersonID: 7
-  DialogueText: I haven't really had a look, I'll leave the speculation to the informed.The
-    victim is in the Master Bedroom, upstairs.You can choose to go there now, or
-    talk to some of the staff first. Or, if you like, you can just start looking
-    for clues, up to you.
+  DialogueText: The victim is in the Master's bedroom upstairs. You can choose to
+    go there now, or talk to some of the staff first. Or, if you like, you can just
+    start looking for clues, up to you.
   IsTestimony: 0
   TestimonyID: 0
   HasCondition: 0
@@ -29,8 +28,8 @@ MonoBehaviour:
   Discovered: 0
   Hidden: 0
   endsDialogue: 0
-  voiceLine: {fileID: 8300000, guid: f75662425ccfc674e95969fcf87b5a2c, type: 3}
+  voiceLine: {fileID: 8300000, guid: a683225cab6991544bf702d1ef10585c, type: 3}
   OnSay:
     m_PersistentCalls:
       m_Calls: []
-  responseIDs: 000000000100000009000000
+  responseIDs: 1f0000001c0000001e000000

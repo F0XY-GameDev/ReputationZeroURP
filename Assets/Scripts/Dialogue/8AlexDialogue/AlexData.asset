@@ -12,10 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ba6a3a0bcfb93f340ab879063a0759e7, type: 3}
   m_Name: AlexData
   m_EditorClassIdentifier: 
-  Mugshot: {fileID: 0}
+  Mugshot: {fileID: 21300000, guid: 71e4117228b3fcc4fb4924a145060688, type: 3}
   Name: Alex
   PersonID: 8
   Relation: Footwoman at Thorpton Manor
-  Testimonies: []
+  Testimonies:
+  - {fileID: 11400000, guid: 13c2cce38f12f1744beb571b05c2ba53, type: 2}
+  - {fileID: 11400000, guid: 7cff493e802820b4c91316c2b4c005c1, type: 2}
+  - {fileID: 11400000, guid: 41c0d14366b39974ebd2d4ea0509cf09, type: 2}
   Descriptions: []
   manager: {fileID: 0}

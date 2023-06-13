@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   DialogueID: 32
   PersonName: Carlos
-  PersonID: 7
+  PersonID: 25
   DialogueText: 'Alright, let''s call in the suspects. '
   IsTestimony: 0
   TestimonyID: 0
@@ -30,4 +30,4 @@ MonoBehaviour:
   OnSay:
     m_PersistentCalls:
       m_Calls: []
-  responseIDs: 000000000100000002000000
+  responseIDs: 3c000000

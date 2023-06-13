@@ -16,8 +16,8 @@ MonoBehaviour:
   PersonName: James
   PersonID: 5
   DialogueText: A man is entitled to his decorations, no? Sir.
-  IsTestimony: 0
-  TestimonyID: 0
+  IsTestimony: 1
+  TestimonyID: 3
   HasCondition: 0
   IsConditionMet: 0
   ConditionID: 0

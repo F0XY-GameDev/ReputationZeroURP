@@ -27,7 +27,7 @@ MonoBehaviour:
   Discovered: 0
   Hidden: 0
   endsDialogue: 0
-  voiceLine: {fileID: 8300000, guid: d199dc3edffb00741954744d0e226071, type: 3}
+  voiceLine: {fileID: 8300000, guid: c1309ad5c5eddea4092fcc1fbe39113d, type: 3}
   OnSay:
     m_PersistentCalls:
       m_Calls: []

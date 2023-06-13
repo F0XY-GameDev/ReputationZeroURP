@@ -17,8 +17,8 @@ MonoBehaviour:
   PersonID: 3
   DialogueText: Well, I heard something unusual in the evening. A lot of commotion
     near the master bedroom. And now the police all over the house..
-  IsTestimony: 0
-  TestimonyID: 0
+  IsTestimony: 1
+  TestimonyID: 6
   HasCondition: 0
   IsConditionMet: 1
   ConditionID: 0

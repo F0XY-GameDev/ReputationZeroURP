@@ -36,6 +36,7 @@ public class Manager : MonoBehaviour
     public bool yTutorialFinished;
     public bool isGrabTutorialFinished;
     public bool isRegisterTutorialFinished;
+    public bool hasEvidence;
 
     void Awake()
     {

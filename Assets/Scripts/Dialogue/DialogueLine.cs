@@ -20,6 +20,7 @@ public class DialogueLine : ScriptableObject, IDiscoverable, IHideable //as an I
     public bool Discovered;
     public bool Hidden;
     public bool endsDialogue;
+    public bool spawnsJournal;
     public AudioClip voiceLine;
     public UnityEvent OnSay;
     public List<int> responseIDs = new List<int>();

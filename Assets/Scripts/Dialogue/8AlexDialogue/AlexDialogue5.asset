@@ -17,7 +17,7 @@ MonoBehaviour:
   PersonID: 8
   DialogueText: I don't know, all I'm saying is I spent all of after dinner cleaning
     the Taxidermy lounge, and didn't hear anything.
-  IsTestimony: 0
+  IsTestimony: 1
   TestimonyID: 0
   HasCondition: 0
   IsConditionMet: 1

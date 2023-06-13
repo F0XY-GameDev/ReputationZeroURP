@@ -13,9 +13,9 @@ MonoBehaviour:
   m_Name: QCop5
   m_EditorClassIdentifier: 
   ID: 32
-  Message: Can you analyze...
+  Message: Can you analyze... (coming soon!)
   PersonName: Carlos
-  PersonID: 7
+  PersonID: 25
   HasCondition: 0
   isConditionMet: 1
   ConditionID: 0
@@ -23,4 +23,4 @@ MonoBehaviour:
   endsDialogue: 0
   startsSuspectChoosing: 0
   endsSuspectChoosing: 0
-  dialogueIDs: 0a000000
+  dialogueIDs: 1f000000

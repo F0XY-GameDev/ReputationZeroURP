@@ -10,9 +10,11 @@ public class Person : MonoBehaviour, IDiscoverable
 {
     // Never forget: Start is called before the first frame update and Update is called once per frame
     public PersonData PersonData;
+    public PersonData alternatePersonData;
     public List<DialogueLine> Lines;
     public List<Question> Responses;
     public DialogueDisplay dialogueDisplay;
+    public DialogueManager dialogueManager;
     public string alternateFirstLine;
     public AudioClip alternateFirstLineVoice;
     public Canvas displayCanvas;
@@ -22,7 +24,7 @@ public class Person : MonoBehaviour, IDiscoverable
     public InputActionProperty toggleReference;
     public InputActionReference controls;
     public InputActionAsset ActionAsset;
-
+    public int testimonyCount;
     bool isColliding = false;
 
     public bool Discovered;
@@ -63,10 +65,10 @@ public class Person : MonoBehaviour, IDiscoverable
     void Start()
     {
         dialogueDisplay.Hide();
-        List<DialogueLine> tempDialogueList = new List<DialogueLine>();
-        foreach (DialogueLine dialogue in FindObjectOfType<DialogueManager>().LoadedDialogueConfig.Lines)
+        List<DialogueLine> tempDialogueList = new List<DialogueLine>();        
+        foreach (DialogueLine dialogue in dialogueManager.LoadedDialogueConfig.Lines)
         {
-            if (dialogue.PersonName == PersonData.Name && dialogue.canHear)
+            if (dialogue.PersonID == PersonData.PersonID && dialogue.canHear)
             {
                 tempDialogueList.Add(dialogue);
             }
@@ -76,7 +78,7 @@ public class Person : MonoBehaviour, IDiscoverable
         List<Question> tempQuestionList = new List<Question>();
         foreach (Question question in FindObjectOfType<ResponseManager>().LoadedQuestionConfig.Questions)
         {
-            if (question.PersonName == PersonData.Name && question.isConditionMet)
+            if (question.PersonID == PersonData.PersonID && question.isConditionMet)
             {
                 tempQuestionList.Add(question);
             }
@@ -84,6 +86,32 @@ public class Person : MonoBehaviour, IDiscoverable
         Responses.AddRange(tempQuestionList);
         
         
+    }
+
+    public void UpdateDialogue()
+    {
+        dialogueDisplay.Hide();
+        List<DialogueLine> tempDialogueList = new List<DialogueLine>();
+        foreach (DialogueLine dialogue in dialogueManager.LoadedDialogueConfig.Lines)
+        {
+            if (dialogue.PersonID == PersonData.PersonID && dialogue.canHear)
+            {
+                tempDialogueList.Add(dialogue);
+            }
+        }
+        Lines.Clear();
+        Lines.AddRange(tempDialogueList);
+
+        List<Question> tempQuestionList = new List<Question>();
+        foreach (Question question in FindObjectOfType<ResponseManager>().LoadedQuestionConfig.Questions)
+        {
+            if (question.PersonID == PersonData.PersonID && question.isConditionMet)
+            {
+                tempQuestionList.Add(question);
+            }
+        }
+        Responses.Clear();
+        Responses.AddRange(tempQuestionList);
     }
 
     public void Discover()
@@ -136,6 +164,7 @@ public class Person : MonoBehaviour, IDiscoverable
     public void UnlockDialogue(DialogueLine dialogue) //passed a dialogueline by the gamestatemanager when a new line is unlocked, then sorts dialogue by ID
     {
         Lines.Add(dialogue);
+        testimonyCount++;
         Lines = Lines.OrderBy(d => d.DialogueID).ToList();
     }
 
@@ -156,5 +185,11 @@ public class Person : MonoBehaviour, IDiscoverable
     {
         Lines[0].DialogueText = alternateFirstLine;
         Lines[0].voiceLine = alternateFirstLineVoice;
+    }
+
+    public void SwapToPersonData(PersonData personData)
+    {
+        PersonData = personData;
+        UpdateDialogue();
     }
 }
