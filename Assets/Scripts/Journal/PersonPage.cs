@@ -33,8 +33,7 @@ public class PersonPage : MonoBehaviour
         linkedTestimony = GetTestimonyByPersonID(personData.PersonID);
         for (int i = 0; i < Testimony.Count; i++)
         {
-            Testimony[i].text = "";
-            Testimony[i].text = linkedTestimony[i].Text;
+            if (Testimony[i] != null) { Testimony[i].SetText(linkedTestimony[i].Text); } else { Testimony[i].SetText(""); }
             //Testimony[i].text = journal.Persons[CurrentPerson].Descriptions[i];
         }
     }

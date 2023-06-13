@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: abcf79f897f54a74aad8ea80bda15d81, type: 3}
   m_Name: AlexDialogue1
   m_EditorClassIdentifier: 
-  DialogueID: 37
+  DialogueID: 36
   PersonName: Alex
   PersonID: 8
   DialogueText: Yes?
@@ -26,6 +26,7 @@ MonoBehaviour:
   Discovered: 0
   Hidden: 0
   endsDialogue: 0
+  spawnsJournal: 0
   voiceLine: {fileID: 8300000, guid: 7ccf773fc06822d4c8b6496ede9649ac, type: 3}
   OnSay:
     m_PersistentCalls:

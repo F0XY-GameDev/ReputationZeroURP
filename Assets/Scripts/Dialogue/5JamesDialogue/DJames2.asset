@@ -26,6 +26,7 @@ MonoBehaviour:
   Discovered: 0
   Hidden: 0
   endsDialogue: 0
+  spawnsJournal: 0
   voiceLine: {fileID: 8300000, guid: a2538dcf06081b44d864bd4da29170ed, type: 3}
   OnSay:
     m_PersistentCalls:
@@ -42,4 +43,4 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  responseIDs: 120000001300000014000000
+  responseIDs: 1200000013000000

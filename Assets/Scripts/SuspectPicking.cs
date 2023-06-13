@@ -137,13 +137,15 @@ public class SuspectPicking : MonoBehaviour
 
     public void InitiateTP()
     {
+        Debug.Log("InitiateTP");
         fadeScreen.FadeOut();
-        WaitForFadeScreen();
+        StartCoroutine(WaitForFadeScreen());
     }
     public void InitiateOffice()
     {
+        Debug.Log("InitiateOffice");
         fadeScreen.FadeOut();
-        WaitForFadeScreenOffice();
+        StartCoroutine(WaitForFadeScreenOffice());
     }
     public IEnumerator WaitForFadeScreen()
     {
@@ -179,5 +181,6 @@ public class SuspectPicking : MonoBehaviour
             Object[i].transform.position = TpOffice[i].transform.position;
             Object[i].transform.localRotation = TpOffice[i].transform.localRotation;
         }
+        fadeScreen.FadeIn();
     }
 }

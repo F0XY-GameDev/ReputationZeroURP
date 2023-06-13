@@ -110,16 +110,18 @@ public class ResponseDisplay : MonoBehaviour
 
     void SelectResponse(int value) //when the player selects a response based off the above code, the response is passed to the dialoguedisplay
     {
-        ClearText();
-        dialogueDisplay.AdvanceDialogueByResponse(currentAvailableQuestions[value]);
         if (currentAvailableQuestions[value].startsSuspectChoosing)
         {
+            Debug.Log("startsuspectInvoke");
             OnStartSuspectChoice.Invoke();
         }
         if (currentAvailableQuestions[value].endsSuspectChoosing)
         {
+            Debug.Log("endSuspectInvoke");
             OnEndSuspectChoice.Invoke();
         }
+        ClearText();
+        dialogueDisplay.AdvanceDialogueByResponse(currentAvailableQuestions[value]);        
     }
 
     public void SetText(DialogueLine dialogue)
