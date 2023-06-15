@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7775d3438ab2c5b4e96b232cedea6388, type: 3}
+  m_Name: FlashDriveData
+  m_EditorClassIdentifier: 
+  ItemPicture: {fileID: 21300000, guid: 69293bed87a14c345878527e622eb82c, type: 3}
+  ItemName: Flash Drive
+  EvidenceID: 2
+  FoundLocation: Upstairs Study, on the desk
+  EvidenceDescriptions:
+  - {fileID: 11400000, guid: 0819a74286c0ed44587958321130cb78, type: 2}
+  - {fileID: 11400000, guid: 927a2f0c4f78c0a4f880ab394dc7140c, type: 2}
+  Descriptions: []
+  manager: {fileID: 0}

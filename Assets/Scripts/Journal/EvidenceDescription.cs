@@ -9,8 +9,13 @@ public class EvidenceDescription : ScriptableObject, IHiddenDescription
     public int DescriptionID;
     public string Text;
     public bool Discovered;
-    int IHiddenDescription.EvidenceID { get => EvidenceID; }
+    public int ConditionID;
+    int IHiddenDescription.TargetID { get => EvidenceID; }
     string IHiddenDescription.Message { get => Text; }
     bool IHiddenDescription.Discovered { get => Discovered; set => Discovered = value; }
-    int IHiddenDescription.ID { get => DescriptionID; }
+    int IHiddenDescription.OwnID { get => DescriptionID; }
+    public void Discover()
+    {
+        Discovered = true;
+    }
 }

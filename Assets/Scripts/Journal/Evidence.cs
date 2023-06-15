@@ -6,7 +6,6 @@ using UnityEngine.Events;
 
 [RequireComponent(typeof(XRGrabInteractable))]
 [RequireComponent(typeof(AudioSource))]
-
 public class Evidence : MonoBehaviour, IDiscoverable
 {
     // Start is called before the first frame update
@@ -14,11 +13,15 @@ public class Evidence : MonoBehaviour, IDiscoverable
     public bool isCondition;
     public int conditionID;
     public UnityEvent OnBagEvidence;
+    public UnityEvent OnPlayerEnteredTrigger;
+    public UnityEvent OnPlayerExitedTrigger;
     AudioSource audioSource;
     public AudioClip audioClip;
 
+
     public bool Discovered;
     bool IDiscoverable.Discovered { get => Discovered; set => Discovered = value; }
+    int IDiscoverable.ID { get => EvidenceData.EvidenceID; }
     void Start()
     {
         audioSource = GetComponent<AudioSource>();
@@ -28,11 +31,24 @@ public class Evidence : MonoBehaviour, IDiscoverable
         EvidenceData.EvidenceDescriptions = FindObjectOfType<Manager>().GetEvidenceDescriptionListByID(EvidenceData.EvidenceID);
     }
 
-    // Update is called once per frame
-    void Update()
+    /*
+    public void OnTriggerEnter(Collider other)
     {
-        
+        var player = other.GetComponent<Player>();
+        if (player != null)
+        {
+            OnPlayerEnteredTrigger.Invoke();
+        }
     }
+
+    public void OnTriggerExit(Collider other)
+    {
+        var player = other.GetComponent<Player>();
+        if (player != null)
+        {
+            OnPlayerExitedTrigger.Invoke();
+        }
+    }*/
 
     public void BagEvidence(ActivateEventArgs args)
     {
@@ -42,6 +58,20 @@ public class Evidence : MonoBehaviour, IDiscoverable
         audioSource.PlayOneShot(audioClip, 1f);
         FindObjectOfType<Journal>().UpdateEvidence();
         OnBagEvidence.Invoke();
+        var manager = FindObjectOfType<Manager>();
+        if (manager != null && !manager.hasEvidence)
+        {
+            FindObjectOfType<Manager>().hasEvidence = true;
+            var allPersons = FindObjectsOfType<Person>();
+            foreach (Person person in allPersons)
+            {
+                if (person.PersonData.PersonID == 7)
+                {
+                    var cop = person;
+                    cop.SwapToPersonData(cop.alternatePersonData);
+                }
+            }
+        }       
     }
 
     void SetEvidenceConditions()

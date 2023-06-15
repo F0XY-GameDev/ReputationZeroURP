@@ -5,7 +5,7 @@ using UnityEngine;
 public class FaceTarget : MonoBehaviour
 {
     // Never forget: Start is called before the first frame update and Update is called once per frame
-    // GPT Generated Script
+    // GPT Generated Script    
 
     [SerializeField] Transform target; // The target to face
 

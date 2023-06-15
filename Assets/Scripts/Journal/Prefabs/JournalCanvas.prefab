@@ -123,6 +123,11 @@ MonoBehaviour:
   CoverPage: {fileID: 1333365700590426293}
   PeoplePage: {fileID: 6537697756582730846}
   EvidencePage: {fileID: 7966808423517452058}
+  ResultsPage: {fileID: 0}
+  OnPageFlip:
+    m_PersistentCalls:
+      m_Calls: []
+  suspectChooser: {fileID: 0}
 --- !u!1 &1736148958917003789
 GameObject:
   m_ObjectHideFlags: 0
@@ -937,7 +942,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CurrentItem: 0
+  CurrentItemID: 0
   journal: {fileID: 0}
-  EvidenceLabel: {fileID: 0}
+  manager: {fileID: 0}
+  EvidenceFoundLocation: {fileID: 0}
+  ItemName: {fileID: 0}
+  EvidenceDescriptions: []
   ItemImage: {fileID: 0}
   Next: {fileID: 0}
+  pageFlip: {fileID: 0}
+  nextSection:
+    m_PersistentCalls:
+      m_Calls: []
+  nextPage:
+    m_PersistentCalls:
+      m_Calls: []
+  linkedDescriptions: []

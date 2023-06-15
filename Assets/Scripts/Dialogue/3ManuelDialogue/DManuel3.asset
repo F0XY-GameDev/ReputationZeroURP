@@ -1,0 +1,35 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: abcf79f897f54a74aad8ea80bda15d81, type: 3}
+  m_Name: DManuel3
+  m_EditorClassIdentifier: 
+  DialogueID: 3
+  PersonName: Manuel
+  PersonID: 3
+  DialogueText: Oh! I heard something around.. hmm.. maybe 2 am? I think somebody
+    went into Ricardo's room around that time. Couldn't have stayed more than 2-3
+    minutes.. so..
+  IsTestimony: 1
+  TestimonyID: 8
+  HasCondition: 0
+  IsConditionMet: 1
+  ConditionID: 0
+  changesAfterHearing: 0
+  canHear: 1
+  Discovered: 0
+  Hidden: 0
+  endsDialogue: 0
+  voiceLine: {fileID: 8300000, guid: c0b2a376b209a0e4ebb804d136cbb0a2, type: 3}
+  OnSay:
+    m_PersistentCalls:
+      m_Calls: []
+  responseIDs: 04000000

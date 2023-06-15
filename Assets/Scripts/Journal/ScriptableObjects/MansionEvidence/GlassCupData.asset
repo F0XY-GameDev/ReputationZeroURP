@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7775d3438ab2c5b4e96b232cedea6388, type: 3}
+  m_Name: GlassCupData
+  m_EditorClassIdentifier: 
+  ItemPicture: {fileID: 21300000, guid: 690284b3387fa4a4e937b22fd56052fc, type: 3}
+  ItemName: Glass Cup
+  EvidenceID: 3
+  FoundLocation: Master Bedroom
+  EvidenceDescriptions:
+  - {fileID: 11400000, guid: 1d8b4e86b3965e545a73d1d905c1f8be, type: 2}
+  - {fileID: 11400000, guid: e8cca85e489b01c4bb9d37b997eec188, type: 2}
+  Descriptions: []
+  manager: {fileID: 0}

@@ -39,6 +39,34 @@
                     "isPartOfComposite": false
                 }
             ]
+        },
+        {
+            "name": "Interaction",
+            "id": "dd067be2-88b1-46c3-90c6-bb80069bc0c8",
+            "actions": [
+                {
+                    "name": "Interact",
+                    "type": "Button",
+                    "id": "68f2b60c-a1d9-4565-a91b-137f3f912bd2",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "7b424be5-6135-44e1-9fce-fde0205d8f5f",
+                    "path": "<OculusTouchController>{RightHand}/primaryButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Interact",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
         }
     ],
     "controlSchemes": []

@@ -5,9 +5,21 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/SampleScene.unity
     guid: 99c9720ab356a0642a771bea13969a05
+  - enabled: 1
+    path: Assets/Scenes/MansionRE.unity
+    guid: 72a45b79bb0801e428b04a2892c0a902
+  - enabled: 0
+    path: Assets/Scenes/LoadingScreen.unity
+    guid: c140ee38d0a11134c9a65c025a65c8b4
   m_configObjects:
+    Unity.XR.Oculus.Settings: {fileID: 11400000, guid: bfa1182bd221b4ca89619141f66f1260,
+      type: 2}
+    com.unity.input.settings: {fileID: 11400000, guid: 6c079abba5508934087991242584ccbe,
+      type: 2}
     com.unity.xr.management.loader_settings: {fileID: 11400000, guid: 1a4c68ca72a83449f938d669337cb305,
+      type: 2}
+    com.unity.xr.openxr.settings4: {fileID: 11400000, guid: 6a1270b6809e9824f8de81ffc40c5d23,
       type: 2}

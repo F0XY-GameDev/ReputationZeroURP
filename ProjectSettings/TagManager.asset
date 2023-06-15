@@ -6,6 +6,13 @@ TagManager:
   tags:
   - RightHand
   - LeftHand
+  - LeftPage
+  - Whiteboard
+  - USB
+  - Button
+  - Attach
+  - Cop
+  - ConvictCheck
   layers:
   - Default
   - TransparentFX
@@ -14,14 +21,14 @@ TagManager:
   - Water
   - UI
   - postprocessing
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
+  - Player
+  - Grab Ignore Ray
+  - Grab
+  - Interactable
+  - Body
+  - Teleport
+  - Wall
+  - Inventory
   - 
   - 
   - 

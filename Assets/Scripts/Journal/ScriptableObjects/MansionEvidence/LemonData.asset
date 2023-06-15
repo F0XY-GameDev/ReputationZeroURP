@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7775d3438ab2c5b4e96b232cedea6388, type: 3}
+  m_Name: LemonData
+  m_EditorClassIdentifier: 
+  ItemPicture: {fileID: 21300000, guid: d98ccc3fda08d994ca506f3d2b59e8d7, type: 3}
+  ItemName: Lemon
+  EvidenceID: 16
+  FoundLocation: Kitchen, on the counter
+  EvidenceDescriptions:
+  - {fileID: 11400000, guid: b63b9fb20d0cef940b86e2ffa6d172d5, type: 2}
+  Descriptions: []
+  manager: {fileID: 0}

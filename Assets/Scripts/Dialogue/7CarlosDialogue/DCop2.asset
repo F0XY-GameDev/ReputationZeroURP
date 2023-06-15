@@ -1,0 +1,35 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: abcf79f897f54a74aad8ea80bda15d81, type: 3}
+  m_Name: DCop2
+  m_EditorClassIdentifier: 
+  DialogueID: 26
+  PersonName: Carlos
+  PersonID: 7
+  DialogueText: The victim is in the Master's bedroom upstairs. You can choose to
+    go there now, or talk to some of the staff first. Or, if you like, you can just
+    start looking for clues, up to you.
+  IsTestimony: 0
+  TestimonyID: 0
+  HasCondition: 0
+  IsConditionMet: 1
+  ConditionID: 0
+  changesAfterHearing: 0
+  canHear: 1
+  Discovered: 0
+  Hidden: 0
+  endsDialogue: 0
+  voiceLine: {fileID: 8300000, guid: a683225cab6991544bf702d1ef10585c, type: 3}
+  OnSay:
+    m_PersistentCalls:
+      m_Calls: []
+  responseIDs: 1f0000001c0000001e000000
